@@ -1,18 +1,55 @@
-import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { BrowserModule } from '@angular/platform-browser';
+import { FormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
+
 import { AppComponent } from './app.component';
+import { LandingComponent } from './landing/landing.component';
+import {SidebarComponent} from "./sidebar/sidebar.component";
+import { HeaderComponent } from './header/header.component';
+import { WritingWorkComponent } from './landing/writing-work/writing-work.component';
+import { WatchWorksComponent } from './landing/watch-works/watch-works.component';
+import { EventsComponent } from './landing/events/events.component';
+import { InformationComponent } from './landing/information/information.component';
+import { PersonalAreaComponent } from './personal-area/personal-area.component';
+import { PhotoComponent } from './personal-area/photo/photo.component';
+import { PersonalInfoComponent } from './personal-area/personal-info/personal-info.component';
+import { GraphicsComponent } from './personal-area/graphics/graphics.component';
+import { DoingWorkComponent } from './doing-work/doing-work.component';
+import { DescriptionComponent } from './doing-work/description/description.component';
+import { SendWorkComponent } from './doing-work/send-work/send-work.component';
+import {HttpService} from "./http.service";
+import { WatchingWorkComponent } from './watching-work/watching-work.component';
+
 
 @NgModule({
-  declarations: [
-    AppComponent
-  ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    FormsModule,
+    AppRoutingModule,
+    HttpClientModule
   ],
-  providers: [],
+  declarations: [
+    AppComponent,
+    LandingComponent,
+    SidebarComponent,
+    HeaderComponent,
+    WritingWorkComponent,
+    WatchWorksComponent,
+    EventsComponent,
+    InformationComponent,
+    PersonalAreaComponent,
+    PhotoComponent,
+    PersonalInfoComponent,
+    GraphicsComponent,
+    DoingWorkComponent,
+    DescriptionComponent,
+    SendWorkComponent,
+    WatchingWorkComponent,
+  ],
+  providers:[HttpService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
