@@ -1,0 +1,64 @@
+$header_height: 9%;
+$sidebar_width: 6%;
+.header {
+  float: top;
+  //float: top;
+  //background-color: red;
+  height: $header_height;
+  width: 100%;
+  background-color: #9974a7;
+  border-bottom: 1px solid #9974a7;
+}
+.site-info{
+  margin-left:20px;
+}
+.logo{
+  width: 55px;
+  height:20px;
+  margin-left:70px;
+  margin-top:-50px;
+  color:darkslategrey;
+  background-color: #d1cfe3;
+  font-family:monospace;
+  font-size:15px;
+  font-weight:500;
+  text-align:center;
+  padding-top:18px ;
+  border-radius:7px;
+}
+.name {
+  width: 200px;
+  height: 28px;
+  margin-left: 150px;
+  margin-top: -38px;
+  color: darkslategrey;
+  background-color: #d1cfe3;
+  font-family: monospace;
+  font-size: 15px;
+  font-weight: 700;
+  text-align: center;
+  padding-top: 10px;
+  border-radius:7px;
+}
+.user-info{
+  color: darkslategrey;
+  background-color: #d1cfe3;
+  font-family: monospace;
+  font-size: 15px;
+  font-weight: 700;
+  text-align: center;
+  padding-top: 10px;
+  border-radius:7px;
+  width:200px;
+  height:30px;
+  margin-left:1050px;
+  margin-top:-38px ;
+}
+#lk{
+  margin-left:1270px;
+  margin-top:-90px;
+  height:50px;
+  width:50px;
+  background-color: #9974a7 ;
+  position:relative;
+}

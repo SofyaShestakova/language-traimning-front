@@ -1,0 +1,53 @@
+$sidebar_width: 6%;
+.sidebar {
+  float: left;
+  display: block;
+  // height: 99.9% - $header_height;
+  width: $sidebar_width;
+  min-width: 75px;
+  background-color: #9974a7;
+  border-right: 1px solid black;
+  height:100%;
+}
+
+.vertical-button-panel {
+  width: fit-content;
+  margin: auto;
+  background-color:#9974a7;
+}
+
+.vertical-button-panel > div {
+  height: 55px;
+  width: 55px;
+  margin-top: 7.5px;
+  background-color: #d1cfe3;
+}
+.lk1:hover::after {
+  content: attr(data-title);
+  position: relative;
+  left: 0;  bottom: 0px;
+  z-index: 1;
+  background: rgba(0,42,167,0.6);
+  color: #fff;
+  text-align: center;
+  font-family: Arial, sans-serif;
+  font-size: 11px;
+  padding: 5px 10px;
+  border: 1px solid #333;
+}
+
+.do_work:hover::after {
+  content: attr(data-title);
+  position: relative;
+  left: 0;  bottom: 0px;
+  z-index: 1;
+  background: rgba(0,42,167,0.6);
+  color: #fff;
+  text-align: center;
+  font-family: Arial, sans-serif;
+  font-size: 11px;
+  padding: 5px 10px;
+  border: 1px solid #333;
+  width:300px;
+}
+
