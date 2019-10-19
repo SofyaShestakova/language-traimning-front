@@ -65,3 +65,46 @@ $sidebar_width: 6%;
   border: 1px solid #333;
   width:300px;
 }
+.rating:hover::after {
+  content: attr(data-title);
+  position: relative;
+  left: 0;  bottom: 0px;
+  z-index: 1;
+  background: rgba(0,42,167,0.6);
+  color: #fff;
+  text-align: center;
+  font-family: Arial, sans-serif;
+  font-size: 11px;
+  padding: 5px 10px;
+  border: 1px solid #333;
+  width:300px;
+}
+.forum:hover::after {
+  content: attr(data-title);
+  position: relative;
+  left: 0;  bottom: 0px;
+  z-index: 1;
+  background: rgba(0,42,167,0.6);
+  color: #fff;
+  text-align: center;
+  font-family: Arial, sans-serif;
+  font-size: 11px;
+  padding: 5px 10px;
+  border: 1px solid #333;
+  width:300px;
+}
+.info:hover::after {
+  content: attr(data-title);
+  position: relative;
+  left: 0;  bottom: 0px;
+  z-index: 1;
+  background: rgba(0,42,167,0.6);
+  color: #fff;
+  text-align: center;
+  font-family: Arial, sans-serif;
+  font-size: 11px;
+  padding: 5px 10px;
+  border: 1px solid #333;
+  width:300px;
+}
+
