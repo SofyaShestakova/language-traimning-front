@@ -22,6 +22,8 @@ import { DescriptionComponent } from './doing-work/description/description.compo
 import { SendWorkComponent } from './doing-work/send-work/send-work.component';
 import {HttpService} from "./http.service";
 import { WatchingWorkComponent } from './watching-work/watching-work.component';
+import { DescriptionWorkComponent } from './watching-work/description-work/description-work.component';
+import { OtherWorksComponent } from './watching-work/other-works/other-works.component';
 
 
 @NgModule({
@@ -48,6 +50,8 @@ import { WatchingWorkComponent } from './watching-work/watching-work.component';
     DescriptionComponent,
     SendWorkComponent,
     WatchingWorkComponent,
+    DescriptionWorkComponent,
+    OtherWorksComponent,
   ],
   providers:[HttpService],
   bootstrap: [AppComponent]

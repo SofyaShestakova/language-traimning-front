@@ -4,6 +4,7 @@ import {LandingComponent} from "./landing/landing.component";
 import {PersonalAreaComponent} from "./personal-area/personal-area.component";
 import {AppComponent} from "./app.component";
 import {DoingWorkComponent} from "./doing-work/doing-work.component";
+import {WatchingWorkComponent} from "./watching-work/watching-work.component";
 
 
 const routes: Routes = [
@@ -11,7 +12,8 @@ const routes: Routes = [
   { path: 'main', component: LandingComponent},
   { path: 'main', component: AppComponent},
   { path: 'personal-area', component: PersonalAreaComponent},
-  { path: 'doing-work', component: DoingWorkComponent}
+  { path: 'doing-work', component: DoingWorkComponent},
+  { path: 'watching-work', component: WatchingWorkComponent},
 
 ];
 
