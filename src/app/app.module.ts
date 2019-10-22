@@ -24,6 +24,7 @@ import {HttpService} from "./http.service";
 import { WatchingWorkComponent } from './watching-work/watching-work.component';
 import { DescriptionWorkComponent } from './watching-work/description-work/description-work.component';
 import { OtherWorksComponent } from './watching-work/other-works/other-works.component';
+import {GoogleChartsModule} from 'angular-google-charts';
 
 
 @NgModule({
@@ -31,7 +32,8 @@ import { OtherWorksComponent } from './watching-work/other-works/other-works.com
     BrowserModule,
     FormsModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    GoogleChartsModule.forRoot()
   ],
   declarations: [
     AppComponent,

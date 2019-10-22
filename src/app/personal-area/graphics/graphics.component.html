@@ -1,2 +1,22 @@
-<div id="number_works">График количества работ</div>
-<div id="average">График среднего балла</div>
+<div id="number_works">
+  <google-chart #chart1
+                [title]="number_works.title"
+                [type]="number_works.type"
+                [data]="number_works.data"
+                [columnNames]="number_works.columnNames"
+                [options]="number_works.options"
+  >
+  </google-chart>
+</div>
+
+
+<div id="average">
+  <google-chart #chart2
+                [title]="average.title"
+                [type]="average.type"
+                [data]="average.data"
+                [columnNames]="average.columnNames"
+                [options]="average.options"
+             >
+  </google-chart>
+</div>
