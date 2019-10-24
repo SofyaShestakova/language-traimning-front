@@ -32,6 +32,9 @@ import { RatingComponent } from './rating/rating.component';
 import { RatingWorksComponent } from './rating/rating-works/rating-works.component';
 import { StatisticsComponent } from './statistics/statistics.component';
 import { StatGraphicsComponent } from './statistics/stat-graphics/stat-graphics.component';
+import { OtherPageComponent } from './other-page/other-page.component';
+import { InfoComponent } from './other-page/info/info.component';
+import { PhotoOtherComponent } from './other-page/photo-other/photo-other.component';
 
 
 @NgModule({
@@ -68,6 +71,9 @@ import { StatGraphicsComponent } from './statistics/stat-graphics/stat-graphics.
     RatingWorksComponent,
     StatisticsComponent,
     StatGraphicsComponent,
+    OtherPageComponent,
+    InfoComponent,
+    PhotoOtherComponent,
   ],
   providers:[HttpService],
   bootstrap: [AppComponent]
