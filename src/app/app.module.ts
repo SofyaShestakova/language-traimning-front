@@ -30,6 +30,8 @@ import { WriteMessageComponent } from './forum/write-message/write-message.compo
 import { OtherMessageComponent } from './forum/other-message/other-message.component';
 import { RatingComponent } from './rating/rating.component';
 import { RatingWorksComponent } from './rating/rating-works/rating-works.component';
+import { StatisticsComponent } from './statistics/statistics.component';
+import { StatGraphicsComponent } from './statistics/stat-graphics/stat-graphics.component';
 
 
 @NgModule({
@@ -64,6 +66,8 @@ import { RatingWorksComponent } from './rating/rating-works/rating-works.compone
     OtherMessageComponent,
     RatingComponent,
     RatingWorksComponent,
+    StatisticsComponent,
+    StatGraphicsComponent,
   ],
   providers:[HttpService],
   bootstrap: [AppComponent]

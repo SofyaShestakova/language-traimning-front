@@ -7,6 +7,7 @@ import {DoingWorkComponent} from "./doing-work/doing-work.component";
 import {WatchingWorkComponent} from "./watching-work/watching-work.component";
 import {ForumComponent} from "./forum/forum.component";
 import {RatingComponent} from "./rating/rating.component";
+import {StatisticsComponent} from "./statistics/statistics.component";
 
 
 
@@ -19,6 +20,7 @@ const routes: Routes = [
   { path: 'watching-work', component: WatchingWorkComponent},
   { path: 'forum', component: ForumComponent},
   { path: 'rating', component: RatingComponent},
+  { path: 'statistics', component: StatisticsComponent}
 
 ];
 
