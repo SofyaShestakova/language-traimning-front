@@ -28,6 +28,8 @@ import {GoogleChartsModule} from 'angular-google-charts';
 import { ForumComponent } from './forum/forum.component';
 import { WriteMessageComponent } from './forum/write-message/write-message.component';
 import { OtherMessageComponent } from './forum/other-message/other-message.component';
+import { RatingComponent } from './rating/rating.component';
+import { RatingWorksComponent } from './rating/rating-works/rating-works.component';
 
 
 @NgModule({
@@ -60,6 +62,8 @@ import { OtherMessageComponent } from './forum/other-message/other-message.compo
     ForumComponent,
     WriteMessageComponent,
     OtherMessageComponent,
+    RatingComponent,
+    RatingWorksComponent,
   ],
   providers:[HttpService],
   bootstrap: [AppComponent]

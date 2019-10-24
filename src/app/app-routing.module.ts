@@ -6,6 +6,7 @@ import {AppComponent} from "./app.component";
 import {DoingWorkComponent} from "./doing-work/doing-work.component";
 import {WatchingWorkComponent} from "./watching-work/watching-work.component";
 import {ForumComponent} from "./forum/forum.component";
+import {RatingComponent} from "./rating/rating.component";
 
 
 
@@ -17,6 +18,7 @@ const routes: Routes = [
   { path: 'doing-work', component: DoingWorkComponent},
   { path: 'watching-work', component: WatchingWorkComponent},
   { path: 'forum', component: ForumComponent},
+  { path: 'rating', component: RatingComponent},
 
 ];
 
