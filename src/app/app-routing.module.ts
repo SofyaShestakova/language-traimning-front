@@ -5,6 +5,8 @@ import {PersonalAreaComponent} from "./personal-area/personal-area.component";
 import {AppComponent} from "./app.component";
 import {DoingWorkComponent} from "./doing-work/doing-work.component";
 import {WatchingWorkComponent} from "./watching-work/watching-work.component";
+import {ForumComponent} from "./forum/forum.component";
+
 
 
 const routes: Routes = [
@@ -14,6 +16,7 @@ const routes: Routes = [
   { path: 'personal-area', component: PersonalAreaComponent},
   { path: 'doing-work', component: DoingWorkComponent},
   { path: 'watching-work', component: WatchingWorkComponent},
+  { path: 'forum', component: ForumComponent},
 
 ];
 

@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import{ NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
@@ -25,6 +25,9 @@ import { WatchingWorkComponent } from './watching-work/watching-work.component';
 import { DescriptionWorkComponent } from './watching-work/description-work/description-work.component';
 import { OtherWorksComponent } from './watching-work/other-works/other-works.component';
 import {GoogleChartsModule} from 'angular-google-charts';
+import { ForumComponent } from './forum/forum.component';
+import { WriteMessageComponent } from './forum/write-message/write-message.component';
+import { OtherMessageComponent } from './forum/other-message/other-message.component';
 
 
 @NgModule({
@@ -33,7 +36,7 @@ import {GoogleChartsModule} from 'angular-google-charts';
     FormsModule,
     AppRoutingModule,
     HttpClientModule,
-    GoogleChartsModule.forRoot()
+    GoogleChartsModule.forRoot(),
   ],
   declarations: [
     AppComponent,
@@ -54,6 +57,9 @@ import {GoogleChartsModule} from 'angular-google-charts';
     WatchingWorkComponent,
     DescriptionWorkComponent,
     OtherWorksComponent,
+    ForumComponent,
+    WriteMessageComponent,
+    OtherMessageComponent,
   ],
   providers:[HttpService],
   bootstrap: [AppComponent]
