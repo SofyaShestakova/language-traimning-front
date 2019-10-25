@@ -38,6 +38,9 @@ import ruLocale from '@angular/common/locales/ru';
 import { OtherPageComponent } from './other-page/other-page.component';
 import { InfoComponent } from './other-page/info/info.component';
 import { PhotoOtherComponent } from './other-page/photo-other/photo-other.component';
+import { AssignmentComponent } from './assignment/assignment.component';
+import { WorkAndMarkComponent } from './assignment/work-and-mark/work-and-mark.component';
+import { CommentsComponent } from './assignment/comments/comments.component';
 
 
 registerLocaleData(ruLocale, 'ru');
@@ -81,6 +84,9 @@ registerLocaleData(ruLocale, 'ru');
     OtherPageComponent,
     InfoComponent,
     PhotoOtherComponent,
+    AssignmentComponent,
+    WorkAndMarkComponent,
+    CommentsComponent,
   ],
   providers:[HttpService],
   bootstrap: [AppComponent]

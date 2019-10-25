@@ -9,6 +9,7 @@ import {ForumComponent} from "./forum/forum.component";
 import {RatingComponent} from "./rating/rating.component";
 import {StatisticsComponent} from "./statistics/statistics.component";
 import {OtherPageComponent} from "./other-page/other-page.component";
+import {AssignmentComponent} from "./assignment/assignment.component";
 
 
 
@@ -22,7 +23,8 @@ const routes: Routes = [
   { path: 'forum', component: ForumComponent},
   { path: 'rating', component: RatingComponent},
   { path: 'statistics', component: StatisticsComponent},
-  { path: 'other-page', component: OtherPageComponent}
+  { path: 'other-page', component: OtherPageComponent},
+  { path: 'assignment', component: AssignmentComponent}
 
 ];
 
