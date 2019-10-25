@@ -1,3 +1,8 @@
-<h2>Форум</h2>
-<app-other-message></app-other-message>
-<app-write-message></app-write-message>
+
+<div *ngIf="route.children.length === 0">
+  <div *ngFor="let theme of themes">
+    <a [routerLink]="['/forum/theme', theme.id]"> {{theme.title}} </a>
+  </div>
+</div>
+
+<router-outlet></router-outlet>

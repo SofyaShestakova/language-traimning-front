@@ -10,3 +10,9 @@ export interface Answer {
   text:string;
   date: Date;
 }
+
+export interface Theme {
+  id?: number;
+  title: string;
+  messages: Message[];
+}

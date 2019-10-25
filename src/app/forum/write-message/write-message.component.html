@@ -1,7 +1,7 @@
 <form [formGroup]="form" (ngSubmit)="submitMessage()">
   <div class="messages">
     <table>
-      <tr *ngFor="let message of messages">
+      <tr *ngFor="let message of theme.messages">
         <td>
           <quill-view-html [content]="message.text"></quill-view-html>
         </td>
@@ -31,6 +31,9 @@
     <label>Написать сообщение</label>
     <quill-editor formControlName="messageText"></quill-editor>
     <button id="button" type="submit">Отправить</button>
+  </div>
+  <div>
+    <button type="button" [routerLink]="['/forum']">Темы форума</button>
   </div>
 </form>
 

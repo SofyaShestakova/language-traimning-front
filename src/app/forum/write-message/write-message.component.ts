@@ -1,6 +1,8 @@
-import {Component, ElementRef, OnInit, ViewChild} from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {FormControl, FormGroup, Validators} from '@angular/forms';
-import {Answer, Message} from '../../shared/interfaces';
+import {Message, Theme} from '../../shared/interfaces';
+import {ActivatedRoute, Params} from '@angular/router';
+import {ThemeService} from '../../shared/services/theme.service';
 
 @Component({
   selector: 'app-write-message',
@@ -10,18 +12,22 @@ import {Answer, Message} from '../../shared/interfaces';
 export class WriteMessageComponent implements OnInit {
 
   form: FormGroup;
-  messages: Message[] = [];
-  messageId = 0;
-  answerId = 0;
-
+  messageId = 1555;
+  answerId = 456;
   answer = null;
   answerText: string;
+  theme: Theme;
 
-  constructor() {
-
-  }
+  constructor(
+    private route: ActivatedRoute,
+    private themeService: ThemeService
+  ) {}
 
   ngOnInit() {
+    this.route.params.subscribe( (params: Params) => {
+      this.theme = this.themeService.getById(+params.id);
+    });
+
     this.form = new FormGroup({
       messageText: new FormControl(null, Validators.required),
       answerText: new FormControl(null, Validators.required)
@@ -35,7 +41,7 @@ export class WriteMessageComponent implements OnInit {
       date: new Date(),
       answers: []
     };
-    this.messages.push(message);
+    this.theme.messages.push(message);
     this.messageId++;
     this.form.reset();
   }
@@ -45,7 +51,7 @@ export class WriteMessageComponent implements OnInit {
   }
 
   submitAnswer(messageId: number) {
-    this.messages.find(message => message.id == messageId).answers.push({
+    this.theme.messages.find(message => message.id == messageId).answers.push({
       id: this.answerId,
       text: this.form.value.answerText,
       date: new Date()

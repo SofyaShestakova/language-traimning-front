@@ -10,6 +10,7 @@ import {RatingComponent} from "./rating/rating.component";
 import {StatisticsComponent} from "./statistics/statistics.component";
 import {OtherPageComponent} from "./other-page/other-page.component";
 import {AssignmentComponent} from "./assignment/assignment.component";
+import {WriteMessageComponent} from './forum/write-message/write-message.component';
 
 
 
@@ -20,11 +21,13 @@ const routes: Routes = [
   { path: 'personal-area', component: PersonalAreaComponent},
   { path: 'doing-work', component: DoingWorkComponent},
   { path: 'watching-work', component: WatchingWorkComponent},
-  { path: 'forum', component: ForumComponent},
   { path: 'rating', component: RatingComponent},
   { path: 'statistics', component: StatisticsComponent},
   { path: 'other-page', component: OtherPageComponent},
-  { path: 'assignment', component: AssignmentComponent}
+  { path: 'assignment', component: AssignmentComponent},
+  { path: 'forum', component: ForumComponent, children: [
+      {path: 'theme/:id', component: WriteMessageComponent}
+    ]},
 
 ];
 
