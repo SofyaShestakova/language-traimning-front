@@ -8,6 +8,7 @@ import {WatchingWorkComponent} from "./watching-work/watching-work.component";
 import {ForumComponent} from "./forum/forum.component";
 import {RatingComponent} from "./rating/rating.component";
 import {StatisticsComponent} from "./statistics/statistics.component";
+import {OtherPageComponent} from "./other-page/other-page.component";
 
 
 
@@ -20,7 +21,8 @@ const routes: Routes = [
   { path: 'watching-work', component: WatchingWorkComponent},
   { path: 'forum', component: ForumComponent},
   { path: 'rating', component: RatingComponent},
-  { path: 'statistics', component: StatisticsComponent}
+  { path: 'statistics', component: StatisticsComponent},
+  { path: 'other-page', component: OtherPageComponent}
 
 ];
 

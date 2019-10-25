@@ -35,6 +35,9 @@ import { StatGraphicsComponent } from './statistics/stat-graphics/stat-graphics.
 import {QuillModule} from 'ngx-quill';
 import {registerLocaleData} from '@angular/common';
 import ruLocale from '@angular/common/locales/ru';
+import { OtherPageComponent } from './other-page/other-page.component';
+import { InfoComponent } from './other-page/info/info.component';
+import { PhotoOtherComponent } from './other-page/photo-other/photo-other.component';
 
 
 registerLocaleData(ruLocale, 'ru');
@@ -75,6 +78,9 @@ registerLocaleData(ruLocale, 'ru');
     RatingWorksComponent,
     StatisticsComponent,
     StatGraphicsComponent,
+    OtherPageComponent,
+    InfoComponent,
+    PhotoOtherComponent,
   ],
   providers:[HttpService],
   bootstrap: [AppComponent]
