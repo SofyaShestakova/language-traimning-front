@@ -1,6 +1,6 @@
 import{ NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { FormsModule } from '@angular/forms';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -32,7 +32,12 @@ import { RatingComponent } from './rating/rating.component';
 import { RatingWorksComponent } from './rating/rating-works/rating-works.component';
 import { StatisticsComponent } from './statistics/statistics.component';
 import { StatGraphicsComponent } from './statistics/stat-graphics/stat-graphics.component';
+import {QuillModule} from 'ngx-quill';
+import {registerLocaleData} from '@angular/common';
+import ruLocale from '@angular/common/locales/ru';
 
+
+registerLocaleData(ruLocale, 'ru');
 
 @NgModule({
   imports: [
@@ -41,6 +46,8 @@ import { StatGraphicsComponent } from './statistics/stat-graphics/stat-graphics.
     AppRoutingModule,
     HttpClientModule,
     GoogleChartsModule.forRoot(),
+    ReactiveFormsModule,
+    QuillModule.forRoot()
   ],
   declarations: [
     AppComponent,
