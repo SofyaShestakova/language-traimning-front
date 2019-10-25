@@ -1,8 +1,22 @@
 
 <div *ngIf="route.children.length === 0">
+  <div>
+    <p>Тут можно че-нить написать</p>
+  </div>
   <div *ngFor="let theme of themes">
     <a [routerLink]="['/forum/theme', theme.id]"> {{theme.title}} </a>
   </div>
+  <div>
+    <button (click)="showForm=true">Добавить тему</button>
+    <div *ngIf="showForm">
+      <form [formGroup]="form" (ngSubmit)="addTheme()">
+        <label for="title"></label>
+        Название темы: <input id="title" formControlName="themeTitle">
+        <button type="submit">Создать</button>
+      </form>
+    </div>
+  </div>
+
 </div>
 
 <router-outlet></router-outlet>
