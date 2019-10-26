@@ -11,6 +11,8 @@ import {StatisticsComponent} from "./statistics/statistics.component";
 import {OtherPageComponent} from "./other-page/other-page.component";
 import {AssignmentComponent} from "./assignment/assignment.component";
 import {WriteMessageComponent} from './forum/write-message/write-message.component';
+import {RegistrationComponent} from "./registration/registration.component";
+import {AuthComponent} from "./auth/auth.component";
 
 
 
@@ -28,7 +30,8 @@ const routes: Routes = [
   { path: 'forum', component: ForumComponent, children: [
       {path: 'theme/:id', component: WriteMessageComponent}
     ]},
-
+  {path: 'registration', component:RegistrationComponent},
+  {path: 'auth', component:AuthComponent}
 ];
 
 @NgModule({

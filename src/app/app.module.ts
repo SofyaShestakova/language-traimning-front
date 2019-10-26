@@ -41,6 +41,9 @@ import { PhotoOtherComponent } from './other-page/photo-other/photo-other.compon
 import { AssignmentComponent } from './assignment/assignment.component';
 import { WorkAndMarkComponent } from './assignment/work-and-mark/work-and-mark.component';
 import { CommentsComponent } from './assignment/comments/comments.component';
+import { RegistrationComponent } from './registration/registration.component';
+import { MainComponent } from './main/main.component';
+import { AuthComponent } from './auth/auth.component';
 
 
 registerLocaleData(ruLocale, 'ru');
@@ -87,6 +90,9 @@ registerLocaleData(ruLocale, 'ru');
     AssignmentComponent,
     WorkAndMarkComponent,
     CommentsComponent,
+    RegistrationComponent,
+    MainComponent,
+    AuthComponent,
   ],
   providers:[HttpService],
   bootstrap: [AppComponent]
