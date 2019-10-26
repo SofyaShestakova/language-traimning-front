@@ -8,19 +8,19 @@
         <td>{{message.date | date:'medium':null:'ru'}}</td>
         <td>
           <table>
-            <tr *ngFor="let answer of message.answers">
+            <tr class="data" *ngFor="let answer of message.answers">
               <td>{{answer.text}}</td>
               <td>{{answer.date | date: 'medium': null: 'ru' }}</td>
             </tr>
           </table>
         </td>
         <td>
-          <button type="button" (click)="showAnswerField(message.id)">Ответить</button>
+          <button  class="buttons" type="button" (click)="showAnswerField(message.id)">Ответить</button>
 
           <div *ngIf="message.id == answer">
             <label for="answer">Введите ответ</label>
             <input id="answer" type="text" formControlName="answerText">
-            <button type="button" (click)="submitAnswer(message.id)">Отправить ответ</button>
+            <button class="buttons" type="button" (click)="submitAnswer(message.id)">Отправить ответ</button>
           </div>
         </td>
       </tr>
@@ -28,12 +28,12 @@
   </div>
 
   <div>
-    <label>Написать сообщение</label>
+    <label>Введите сообщение</label>
     <quill-editor formControlName="messageText"></quill-editor>
-    <button id="button" type="submit">Отправить</button>
+    <button id="send" class="buttons" id="button" type="submit">Отправить</button>
   </div>
   <div>
-    <button type="button" [routerLink]="['/forum']">Темы форума</button>
+    <button id="topics" class="buttons" type="button" [routerLink]="['/forum']">Темы форума</button>
   </div>
 </form>
 

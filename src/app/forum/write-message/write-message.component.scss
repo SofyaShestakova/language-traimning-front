@@ -14,9 +14,18 @@
   border: 2px solid mediumpurple;
   border-radius: 7px;
 }
-#button{
+.buttons {
+  border-radius: 15px;
   background-color: #d1cfe3;
-  margin-top:3px;
-  margin-left:1150px;
-  position:relative;
+  border-color: mediumpurple;
+  color: darkslategrey;
+  height: 40px;
 }
+.messages{
+  border: 1px solid mediumpurple;
+border-radius:15px;
+}
+#topics{
+  margin-left:200px;
+}
+
