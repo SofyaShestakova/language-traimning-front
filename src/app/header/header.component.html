@@ -6,7 +6,15 @@
   </div>
   <div *ngIf="!auth.isAuthenticated()" class="user-info">Вы не авторизованы</div>
   <div *ngIf="auth.isAuthenticated()" class="user-info">{{user.username}}</div>
-  <div id="btn"><a routerLink="/auth"> <button  type="button" (click)="logout()">Войти</button> </a></div>
+
+  <div class="btn" *ngIf="!auth.isAuthenticated()">
+    <a routerLink="/auth"> <button  type="button">Войти</button> </a>
+  </div>
+
+  <div class="btn" *ngIf="auth.isAuthenticated()">
+     <button  type="button" (click)="logout()">Выйти</button>
+  </div>
+
   <!--<img src="assets/resources/lk.png" id="lk" width="40px" alt="лк"/>-->
 
 </div>
