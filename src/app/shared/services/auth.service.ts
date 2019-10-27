@@ -1,13 +1,15 @@
 import {Injectable} from '@angular/core';
-import {HttpClient, HttpHeaders} from '@angular/common/http';
+import {HttpClient, HttpErrorResponse, HttpHeaders} from '@angular/common/http';
 import {SpringAuthResponse, User} from '../interfaces';
-import {Observable} from 'rxjs';
-import {tap} from 'rxjs/operators';
+import {Observable, Subject, throwError} from 'rxjs';
+import {catchError, tap} from 'rxjs/operators';
 
 @Injectable({providedIn: 'root'})
 export class AuthService {
   constructor(private http: HttpClient){
   }
+
+  public errors$: Subject<string> = new Subject<string>();
 
   get token(): string{
     return localStorage.getItem('spring-token');
@@ -25,7 +27,8 @@ export class AuthService {
 
     return this.http.get('http://localhost:8082/auth', options)
       .pipe(
-        tap(this.setToken)
+        tap(this.setToken),
+        catchError(this.handleError.bind(this))
       )
   }
 
@@ -43,5 +46,14 @@ export class AuthService {
     }else {
       localStorage.clear();
     }
+  }
+
+  private handleError(error: HttpErrorResponse){
+    const status = error.status;
+    if(status==404){
+      this.errors$.next("Неверный логин или пароль");
+    }
+
+    return throwError(error);
   }
 }
