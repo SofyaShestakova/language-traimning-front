@@ -1,15 +1,12 @@
 <div class="header">
   <div class="site-info">
-    <img src  = "assets/resources/menu.png" width="50px" height="50px">
-    <div class="logo" >лого</div>
+    <img src="assets/resources/menu.png" width="50px" height="50px">
+    <div class="logo">LTS</div>
     <div class="name">Language_Training</div>
   </div>
-
   <div *ngIf="!auth.isAuthenticated()" class="user-info">Вы не авторизованы</div>
   <div *ngIf="auth.isAuthenticated()" class="user-info">{{user.username}}</div>
+  <div id="btn"><a routerLink="/auth"> <button  type="button" (click)="logout()">Войти</button> </a></div>
+  <!--<img src="assets/resources/lk.png" id="lk" width="40px" alt="лк"/>-->
 
-  <img src = "assets/resources/lk.png" id="lk" width="40px"  alt ="лк"/>
-  <div>
-    <button type="button" (click)="logout()">Выйти</button>
-  </div>
 </div>
