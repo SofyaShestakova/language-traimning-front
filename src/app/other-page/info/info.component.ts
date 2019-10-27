@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
+import {FormGroup} from "@angular/forms";
+import {Theme} from "../../shared/interfaces";
 
 @Component({
   selector: 'app-info',
@@ -7,9 +9,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class InfoComponent implements OnInit {
 
-  constructor() { }
+  condition: boolean = true;
 
-  ngOnInit() {
+  toggle() {
+    this.condition = !this.condition;
   }
 
+  constructor() {
+  }
+
+  ngOnInit() {
+
+  }
 }
