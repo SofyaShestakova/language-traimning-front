@@ -50,10 +50,16 @@ export class AuthService {
 
   private handleError(error: HttpErrorResponse){
     const status = error.status;
-    if(status==404){
-      this.errors$.next("Неверный логин или пароль");
+    switch (status) {
+      case 404: {
+        this.errors$.next("Такого логина не существует");
+        break;
+      }
+      case 401: {
+        this.errors$.next("Неверный пароль");
+        break;
+      }
     }
-
     return throwError(error);
   }
 }
