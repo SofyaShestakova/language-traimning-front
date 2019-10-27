@@ -16,3 +16,12 @@ export interface Theme {
   title: string;
   messages: Message[];
 }
+
+export interface User {
+    username: string;
+    password: string;
+}
+
+export interface SpringAuthResponse {
+  token: string;
+}

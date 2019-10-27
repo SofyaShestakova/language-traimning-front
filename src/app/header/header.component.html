@@ -4,6 +4,12 @@
     <div class="logo" >лого</div>
     <div class="name">Language_Training</div>
   </div>
-  <div class="user-info">ФИО</div>
+
+  <div *ngIf="!auth.isAuthenticated()" class="user-info">Вы не авторизованы</div>
+  <div *ngIf="auth.isAuthenticated()" class="user-info">{{user.username}}</div>
+
   <img src = "assets/resources/lk.png" id="lk" width="40px"  alt ="лк"/>
+  <div>
+    <button type="button" (click)="logout()">Выйти</button>
+  </div>
 </div>
