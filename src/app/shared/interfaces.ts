@@ -25,3 +25,8 @@ export interface User {
 export interface SpringAuthResponse {
   token: string;
 }
+
+export interface Text {
+  title: string;
+  text: string;
+}
