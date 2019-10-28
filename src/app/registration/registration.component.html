@@ -12,7 +12,7 @@
 
     <div> <button class="buttons">Зарегистрироваться</button></div>
 
-    <div *ngIf="auth.errors$ | async as error">
+    <div class="error" *ngIf="auth.errors$ | async as error">
       {{error}}
     </div>
   </div>
