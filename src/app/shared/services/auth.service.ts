@@ -15,7 +15,11 @@ export class AuthService {
     return localStorage.getItem('spring-token');
   }
 
-
+  register(user: User):Observable<any>{
+    return this.http.post('http://localhost:8082/auth', user).pipe(
+      catchError(this.handleError.bind(this))
+    )
+  }
 
   login(user: User): Observable<any>{
     const headers = new HttpHeaders({
@@ -58,6 +62,9 @@ export class AuthService {
       case 401: {
         this.errors$.next("Неверный пароль");
         break;
+      }
+      case 400: {
+        this.errors$.next("Логин уже существует");
       }
     }
     return throwError(error);

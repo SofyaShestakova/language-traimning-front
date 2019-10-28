@@ -43,12 +43,5 @@ export class AuthComponent implements OnInit {
 
     })
 
-
-    /*
-    Регистрация
-    this.http.post('http://localhost:8082/auth', user).subscribe(res => {
-      console.log(res);
-    })*/
-
   }
 }
