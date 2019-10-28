@@ -13,6 +13,7 @@ import {AssignmentComponent} from "./assignment/assignment.component";
 import {WriteMessageComponent} from './forum/write-message/write-message.component';
 import {RegistrationComponent} from "./registration/registration.component";
 import {AuthComponent} from "./auth/auth.component";
+import {ModeratorPageComponent} from "./moderator-page/moderator-page.component";
 
 
 
@@ -31,7 +32,8 @@ const routes: Routes = [
       {path: 'theme/:id', component: WriteMessageComponent}
     ]},
   {path: 'registration', component:RegistrationComponent},
-  {path: 'auth', component:AuthComponent}
+  {path: 'auth', component:AuthComponent},
+  {path:'moderator-page', component:ModeratorPageComponent},
 ];
 
 @NgModule({

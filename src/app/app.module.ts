@@ -44,6 +44,8 @@ import { CommentsComponent } from './assignment/comments/comments.component';
 import { RegistrationComponent } from './registration/registration.component';
 import { MainComponent } from './main/main.component';
 import { AuthComponent } from './auth/auth.component';
+import { ModeratorPageComponent } from './moderator-page/moderator-page.component';
+import { AdminPageComponent } from './admin-page/admin-page.component';
 
 
 registerLocaleData(ruLocale, 'ru');
@@ -93,6 +95,8 @@ registerLocaleData(ruLocale, 'ru');
     RegistrationComponent,
     MainComponent,
     AuthComponent,
+    ModeratorPageComponent,
+    AdminPageComponent,
   ],
   providers:[HttpService],
   bootstrap: [AppComponent]
