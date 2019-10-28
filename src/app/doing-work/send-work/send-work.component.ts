@@ -41,7 +41,7 @@ export class SendWorkComponent implements OnInit {
 
     const options = {headers: headers};
 
-    this.http.post("http://localhost:8082/texts", text, options).subscribe((res)=> {
+    this.http.post("http://localhost:8180/texts", text, options).subscribe((res)=> {
       this.isSubmit = true;
     })
 

@@ -17,7 +17,7 @@ export class AuthService {
   }
 
   register(user: User):Observable<any>{
-    return this.http.post('http://localhost:8082/auth', user).pipe(
+    return this.http.post('http://localhost:8180/auth', user).pipe(
       catchError(this.handleError.bind(this))
     )
   }
@@ -30,7 +30,7 @@ export class AuthService {
 
     const options = {headers: headers};
 
-    return this.http.get('http://localhost:8082/auth', options)
+    return this.http.get('http://localhost:8180/auth', options)
       .pipe(
         tap(this.setToken),
         catchError(this.handleError.bind(this))
