@@ -1,5 +1,8 @@
-<form>
-  <div id="text">Текст</div>
-  <input id="work"/>
-  <button id="button"  >Отправить</button>
+<form [formGroup]="form" (ngSubmit)="submit()">
+  <label for="title">Заголовок работы</label>
+  <input id="title" class="work" formControlName="title"/>
+  <label for="work">Текст работы</label>
+  <input id="work" class="work" formControlName="text">
+  <button id="button">Отправить</button>
+  <div class="success" *ngIf="isSubmit" > Работ успешно отправлена </div>
 </form>

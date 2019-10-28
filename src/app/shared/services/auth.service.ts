@@ -3,10 +3,11 @@ import {HttpClient, HttpErrorResponse, HttpHeaders} from '@angular/common/http';
 import {SpringAuthResponse, User} from '../interfaces';
 import {Observable, Subject, throwError} from 'rxjs';
 import {catchError, tap} from 'rxjs/operators';
+import {CurrentUserService} from './currentUser.service';
 
 @Injectable({providedIn: 'root'})
 export class AuthService {
-  constructor(private http: HttpClient){
+  constructor(private http: HttpClient, private currentUser: CurrentUserService){
   }
 
   public errors$: Subject<string> = new Subject<string>();
