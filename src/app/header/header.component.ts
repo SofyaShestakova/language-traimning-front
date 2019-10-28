@@ -10,7 +10,7 @@ import {CurrentUserService} from '../shared/services/currentUser.service';
 })
 export class HeaderComponent implements OnInit {
 
-  constructor(private auth: AuthService, private user: CurrentUserService) { }
+  constructor(public auth: AuthService, public user: CurrentUserService) { }
 
 
   ngOnInit() {
