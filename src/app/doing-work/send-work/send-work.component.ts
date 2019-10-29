@@ -38,7 +38,9 @@ export class SendWorkComponent implements OnInit {
   submitWork() {
     const work: Work = {
       text: this.form.value.text,
-      workType: this.form.value.workType
+      type: this.form.value.workType,
+      title: this.text.title,
+      textId: this.text.textId
     };
     console.log(work);
 

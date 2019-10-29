@@ -33,7 +33,10 @@ export interface Text {
 }
 
 export interface Work {
+  textId: string
+  title: string;
+  type: number;
   text: string;
-  workType;
+
 
 }

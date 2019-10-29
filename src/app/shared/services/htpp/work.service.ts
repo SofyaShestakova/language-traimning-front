@@ -17,6 +17,7 @@ export class WorkService {
     const headers = new HttpHeaders({
       "username": username,
       "Authorization": "Bearer " + localStorage.getItem("spring-token"),
+      "Content-Type": "application/json"
     });
     const options = {headers: headers};
 
