@@ -13,7 +13,7 @@ export class ForumComponent implements OnInit {
 
   constructor(
     private themeService: ThemeService,
-    private route: ActivatedRoute
+    public route: ActivatedRoute
   ) {
   }
 

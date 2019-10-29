@@ -2,9 +2,8 @@ import {Component, OnInit} from '@angular/core';
 import {FormControl, FormGroup, Validators} from '@angular/forms';
 import {User} from '../shared/interfaces';
 import {HttpClient} from '@angular/common/http';
-import {AuthService} from '../shared/services/auth.service';
+import {AuthService} from '../shared/services/htpp/auth.service';
 import {Router} from '@angular/router';
-import {HeaderComponent} from '../header/header.component';
 import {CurrentUserService} from '../shared/services/currentUser.service';
 
 @Component({

@@ -1,9 +1,10 @@
 import {Injectable} from '@angular/core';
 import {HttpClient, HttpErrorResponse, HttpHeaders} from '@angular/common/http';
-import {SpringAuthResponse, User} from '../interfaces';
+import {SpringAuthResponse, User} from '../../interfaces';
 import {Observable, Subject, throwError} from 'rxjs';
 import {catchError, tap} from 'rxjs/operators';
-import {CurrentUserService} from './currentUser.service';
+import {CurrentUserService} from '../currentUser.service';
+import {environment} from '../../../../environments/environment';
 
 @Injectable({providedIn: 'root'})
 export class AuthService {
@@ -17,7 +18,7 @@ export class AuthService {
   }
 
   register(user: User):Observable<any>{
-    return this.http.post('http://localhost:8180/auth', user).pipe(
+    return this.http.post(`${environment.baseUrl}:${environment.localPort}/auth`, user).pipe(
       catchError(this.handleError.bind(this))
     )
   }
@@ -30,7 +31,7 @@ export class AuthService {
 
     const options = {headers: headers};
 
-    return this.http.get('http://localhost:8180/auth', options)
+    return this.http.get(`${environment.baseUrl}:${environment.localPort}/auth`, options)
       .pipe(
         tap(this.setToken),
         catchError(this.handleError.bind(this))

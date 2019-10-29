@@ -27,7 +27,7 @@
   width:93.5%;
   border: 2px solid mediumpurple;
 }
-#button{
+.button{
   background-color: #d1cfe3;
   position:relative;
   margin-top: 20px;
@@ -38,4 +38,15 @@
   color: green;
   text-align: center;
   font-size: 18px;
+}
+
+.title{
+  font-weight: bold;
+  text-align: center;
+  font-size: 17px;
+  margin-top: 25px;
+}
+
+.title-work{
+  margin-left: 44%;
 }

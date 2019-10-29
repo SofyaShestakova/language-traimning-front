@@ -1,6 +1,5 @@
-import { Component, OnInit } from '@angular/core';
-import {AuthService} from '../shared/services/auth.service';
-import {User} from '../shared/interfaces';
+import {Component, OnInit} from '@angular/core';
+import {AuthService} from '../shared/services/htpp/auth.service';
 import {CurrentUserService} from '../shared/services/currentUser.service';
 
 @Component({
@@ -10,7 +9,9 @@ import {CurrentUserService} from '../shared/services/currentUser.service';
 })
 export class HeaderComponent implements OnInit {
 
-  constructor(public auth: AuthService, public user: CurrentUserService) { }
+  constructor(public auth: AuthService,
+              public user: CurrentUserService
+  ) { }
 
 
   ngOnInit() {

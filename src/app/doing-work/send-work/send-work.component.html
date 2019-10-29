@@ -1,8 +1,31 @@
-<form [formGroup]="form" (ngSubmit)="submit()">
-  <label for="title">Заголовок работы</label>
-  <input id="title" class="work" formControlName="title"/>
-  <label for="work">Текст работы</label>
-  <textarea rows="4" cols="50" id="work" class="work" formControlName="text"></textarea>
-  <button id="button">Отправить</button>
+<form [formGroup]="form" (ngSubmit)="submitWork()">
+  <button class="button" type="button" (click)="renderText()">Получить текст</button>
+  <div *ngIf="isGetText">
+    <div class="title" style="text-align: left">
+      Выберите тип работы
+    </div>
+    <div >
+      <input type="radio" id="contactChoice1" [checked]="true"
+             value="3" formControlName="workType">
+      <label for="contactChoice1">Краткий пересказ</label>
+
+      <input type="radio" id="contactChoice2"
+             value="0" formControlName="workType">
+      <label for="contactChoice2">Анализ</label>
+
+      <input type="radio" id="contactChoice3"
+             value="1" formControlName="workType">
+      <label for="contactChoice3">Перевод</label>
+      <input type="radio" id="contactChoice4"
+             value="2" formControlName="workType">
+      <label for="contactChoice4">Комментарий</label>
+    </div>
+
+
+    <div class="title">{{text.title}}</div>
+    <div class="title" style="font-weight: normal" >{{text.text}}</div>
+    <textarea rows="4" cols="50" id="work" class="work" formControlName="text"></textarea>
+    <button class="button">Отправить</button>
+  </div>
   <div class="success" *ngIf="isSubmit" > Работ успешно отправлена </div>
 </form>

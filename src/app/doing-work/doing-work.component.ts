@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-doing-work',
-  templateUrl: './doing-work.component.html',
   styleUrls: ['./doing-work.component.scss'],
   template:`<h3>Написание работы</h3>
   <app-description></app-description>
