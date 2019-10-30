@@ -1,6 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {Theme} from '../shared/interfaces';
-import {ThemeService} from '../shared/services/theme.service';
+import {ThemeService} from '../shared/services/htpp/theme.service';
 import {ActivatedRoute} from '@angular/router';
 import {FormControl, FormGroup, Validators} from '@angular/forms';
 
@@ -17,7 +17,7 @@ export class ForumComponent implements OnInit {
   ) {
   }
 
-  themes: Theme[] = this.themeService.themes;
+  themes: Theme[] = [];
   showForm = false;
   form: FormGroup;
 
@@ -25,6 +25,8 @@ export class ForumComponent implements OnInit {
     this.form = new FormGroup({
       themeTitle: new FormControl(null, Validators.required)
     });
+    this.themeService.getTheme();
+    this.themes = this.themeService.themes;
   }
 
   addTheme() {

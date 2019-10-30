@@ -2,7 +2,7 @@ import {Component, OnInit} from '@angular/core';
 import {FormControl, FormGroup, Validators} from '@angular/forms';
 import {Message, Theme} from '../../shared/interfaces';
 import {ActivatedRoute, Params} from '@angular/router';
-import {ThemeService} from '../../shared/services/theme.service';
+import {ThemeService} from '../../shared/services/htpp/theme.service';
 
 @Component({
   selector: 'app-write-message',

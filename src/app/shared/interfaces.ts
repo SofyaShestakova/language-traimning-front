@@ -14,7 +14,7 @@ export interface Answer {
 export interface Theme {
   id?: number;
   title: string;
-  messages: Message[];
+  messages?: Message[];
 }
 
 export interface User {
