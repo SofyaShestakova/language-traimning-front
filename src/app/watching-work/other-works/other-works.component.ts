@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {WorkContainer} from '../../shared/services/workContainer';
 
 @Component({
   selector: 'app-other-works',
@@ -7,9 +8,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class OtherWorksComponent implements OnInit {
 
-  constructor() { }
+  constructor(private works: WorkContainer) { }
 
   ngOnInit() {
+
   }
 
 }

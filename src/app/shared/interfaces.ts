@@ -33,8 +33,10 @@ export interface Text {
 }
 
 export interface Work {
-  textId: string
+  workId?: string;
+  textId?: string
   title: string;
-  type: number;
+  type: string;
   text: string;
+  authorId?: string
 }

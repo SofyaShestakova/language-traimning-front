@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {WorkContainer} from '../shared/services/workContainer';
 
 @Component({
   selector: 'app-watching-work',
@@ -13,6 +14,7 @@ export class WatchingWorkComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
+
   }
 
 }

@@ -1,15 +1,17 @@
-#work1,#work2,#work3,#work4,#work5,#work6,#work7,#work8{
+.work{
   font-size: 15px;
   font-weight: 500;
-  height: 55px;
-  width: 150px;
+  height: fit-content;
+  width: 350px;
   text-align: center;
   background-color: #d1cfe3;
   color: darkslategrey;
-  padding-top: 100px;
+  padding-top: 10px;
+  padding-left: 30px;
+  padding-right: 30px;
 }
 
 #table{
   width: 100%;
-  margin-top:50px;
+  margin-top:35px;
 }

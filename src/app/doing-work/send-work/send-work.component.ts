@@ -5,7 +5,9 @@ import {Text, Work} from '../../shared/interfaces';
 import {CurrentUserService} from '../../shared/services/currentUser.service';
 import {HttpClient, HttpHeaders} from '@angular/common/http';
 import {WorkService} from '../../shared/services/htpp/work.service';
-import {TextContainer} from '../../shared/services/textContainer';
+import {AuthService} from '../../shared/services/htpp/auth.service';
+import {Router} from '@angular/router';
+import {WorkContainer} from '../../shared/services/workContainer';
 
 @Component({
   selector: 'app-send-work',
@@ -22,7 +24,9 @@ export class SendWorkComponent implements OnInit {
   constructor(private user: CurrentUserService,
               private http: HttpClient,
               private workService: WorkService,
-              private textContainer: TextContainer
+              private workContainer: WorkContainer,
+              private auth: AuthService,
+              private router: Router
   ) {
   }
 
@@ -42,13 +46,32 @@ export class SendWorkComponent implements OnInit {
       title: this.text.title,
       textId: this.text.textId
     };
-    console.log(work);
 
-    this.workService.postWork(this.user.username, work).subscribe( (res) => {
-      //text.textId =  res.textID;
-      //this.textContainer.texts.push(text);
-      this.isSubmit = true;
-    });
+    if(this.auth.isAuthenticated()){
+      this.workService.postWork(this.user.username, work).subscribe( (res) => {
+        let viewType;
+        switch (res.type) {
+          case "ANALYSIS" : {viewType = "Анализ"} break;
+          case "TRANSLATION" : {viewType = "Перевод"} break;
+          case "RETELLING" : {viewType = "Краткий пересказ"} break;
+          case "COMMENT" : {viewType = "Комментарий"} break;
+        }
+
+        this.workContainer.works.push({
+          workId: res.workId,
+          title: res.title,
+          type: viewType,
+          text: res.text
+        });
+
+        this.isSubmit = true;
+      });
+    }else {
+      this.router.navigate(['/auth']);
+    }
+
+
+
   }
 
   renderText(){

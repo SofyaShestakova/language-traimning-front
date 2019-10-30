@@ -10,7 +10,6 @@ export class WorkService {
   constructor(private http: HttpClient) {
   }
 
-  texts: Text[] = [];
 
   postWork(username: string, work: Work): Observable<any> {
 
@@ -24,8 +23,6 @@ export class WorkService {
 
     return this.http.post(`${environment.baseUrl}:${environment.localPort}/works`, work, options);
   }
-
-
   getText():Observable<any>{
     return  this.http.get(`${environment.baseUrl}:${environment.localPort}/texts/1`);
   }
