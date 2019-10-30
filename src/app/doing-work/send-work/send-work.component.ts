@@ -34,7 +34,7 @@ export class SendWorkComponent implements OnInit {
     this.form = new FormGroup({
       title: new FormControl(null, [Validators.required]),
       text: new FormControl(null, Validators.required),
-      workType: new FormControl(null, Validators.required)
+      workType: new FormControl(3, Validators.required)
     });
 
   }
@@ -46,6 +46,8 @@ export class SendWorkComponent implements OnInit {
       title: this.text.title,
       textId: this.text.textId
     };
+
+    console.log(work);
 
     if(this.auth.isAuthenticated()){
       this.workService.postWork(this.user.username, work).subscribe( (res) => {
