@@ -55,6 +55,7 @@ export class SendWorkComponent implements OnInit {
     this.workService.getText().subscribe((response)=>{
       this.isGetText = true;
       this.text = {
+       textId: response.textId,
        title: response.title,
        text: response.text
      };

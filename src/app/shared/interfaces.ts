@@ -27,7 +27,7 @@ export interface SpringAuthResponse {
 }
 
 export interface Text {
-  textId?: string;
+  textId: string;
   title: string;
   text: string;
 }
@@ -37,6 +37,4 @@ export interface Work {
   title: string;
   type: number;
   text: string;
-
-
 }

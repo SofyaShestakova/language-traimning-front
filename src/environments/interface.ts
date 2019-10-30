@@ -3,4 +3,5 @@ export interface Environment {
   localPort: string;
   heliosPort: string;
   production: boolean;
+  textId: string
 }

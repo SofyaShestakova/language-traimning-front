@@ -22,7 +22,7 @@ export class WorkService {
     const options = {headers: headers};
 
 
-    return this.http.post(`${environment.baseUrl}:${environment.localPort}/texts`, work, options);
+    return this.http.post(`${environment.baseUrl}:${environment.localPort}/works`, work, options);
   }
 
 

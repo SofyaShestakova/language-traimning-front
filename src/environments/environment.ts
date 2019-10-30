@@ -8,7 +8,8 @@ export const environment: Environment = {
   production: false,
   baseUrl: "http://localhost",
   heliosPort: "12500",
-  localPort: "12500"
+  localPort: "12500",
+  textId: "1"
 };
 
 /*
