@@ -15,6 +15,7 @@ export interface Theme {
   id?: number;
   title: string;
   messages?: Message[];
+  text?: string;
 }
 
 export interface User {

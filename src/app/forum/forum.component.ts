@@ -25,18 +25,21 @@ export class ForumComponent implements OnInit {
     this.form = new FormGroup({
       themeTitle: new FormControl(null, Validators.required)
     });
-    this.themeService.getTheme();
-    this.themes = this.themeService.themes;
+    this.themeService.getTheme().subscribe((response) =>{
+      response.themes.map(backTheme => {this.themes.push({
+        title: backTheme.themeName
+      })})
+    });
   }
 
   addTheme() {
-    this.themes.push( {
-      id: Math.round(Math.random()*100000000),
-      title: this.form.value.themeTitle,
-      messages : []
-    },);
+    const title = this.form.value.themeTitle;
+    this.themeService.createTheme(title).subscribe(()=>{
+      this.themes.push({title: title});
+    });
     this.form.reset();
     this.showForm = false;
+    console.log(this.themes);
   }
 
 }

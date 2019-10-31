@@ -1,29 +1,39 @@
 import {Injectable} from '@angular/core';
 import {Theme} from '../../interfaces';
 import {Observable} from 'rxjs';
-import {HttpClient} from '@angular/common/http';
+import {HttpClient, HttpHeaders} from '@angular/common/http';
 import {environment} from '../../../../environments/environment';
+import {AuthService} from './auth.service';
+import {CurrentUserService} from '../currentUser.service';
 
 @Injectable({providedIn: 'root'})
 export class ThemeService {
-  themes: Theme[] = [];
 
-  constructor(private http: HttpClient){
+  constructor(private http: HttpClient, private user: CurrentUserService){
     this.getTheme();
   }
 
-  getTheme(){
+  getTheme(): Observable<any>{
+    return this.http.get(`${environment.baseUrl}:${environment.localPort}/forum/topics`);
+  }
 
-    this.http.get(`${environment.baseUrl}:${environment.localPort}/forum/topics`).subscribe((res:any)=>{
+  createTheme(themeName: string): Observable<any>{
 
-      res.themes.map( backTheme => {
-        this.themes.push({title: backTheme.themeName
-        });
-      });
+    const headers = new HttpHeaders({
+      "username": this.user.username,
+      "Authorization": "Bearer " + localStorage.getItem("spring-token"),
+      "Content-Type": "application/json"
     });
+    const options = {headers: headers};
+    const theme = {
+      themeName: themeName,
+      text: ""
+    };
+
+    return this.http.post(`${environment.baseUrl}:${environment.localPort}/forum/topics`, theme, options);
   }
 
   getById(id: number){
-    return this.themes.find( theme => theme.id === id);
+    return null;// this.themes.find( theme => theme.id === id);
   }
 }
