@@ -3,6 +3,7 @@ import {FormControl, FormGroup, Validators} from '@angular/forms';
 import {Message, Theme} from '../../shared/interfaces';
 import {ActivatedRoute, Params} from '@angular/router';
 import {ThemeService} from '../../shared/services/htpp/theme.service';
+import {ForumComponent} from '../forum.component';
 
 @Component({
   selector: 'app-write-message',
@@ -12,20 +13,29 @@ import {ThemeService} from '../../shared/services/htpp/theme.service';
 export class WriteMessageComponent implements OnInit {
 
   form: FormGroup;
-  messageId = 1555;
   answerId = 456;
   answer = null;
   answerText: string;
-  theme: Theme;
+  theme: Theme = null;
 
   constructor(
     private route: ActivatedRoute,
-    private themeService: ThemeService
+    private themeService: ThemeService,
+    private forum: ForumComponent
   ) {}
 
   ngOnInit() {
     this.route.params.subscribe( (params: Params) => {
-      this.theme = this.themeService.getById(+params.id);
+      this.theme = this.forum.getById(+params.id);
+        this.themeService.getMessage(this.theme.id).subscribe((response) => {
+          this.theme.messages = [];
+          response.messages.map((message) => {
+            this.theme.messages.push({
+              text: message.text,
+              date: new Date(message.createDate)
+            })
+          })
+        });
     });
 
     this.form = new FormGroup({
@@ -36,13 +46,13 @@ export class WriteMessageComponent implements OnInit {
 
   submitMessage() {
     const message: Message = {
-      id: this.messageId,
       text: this.form.value.messageText,
       date: new Date(),
       answers: []
     };
-    this.theme.messages.push(message);
-    this.messageId++;
+    this.themeService.createMessage(message, this.theme.id).subscribe(()=>{
+      this.theme.messages.push(message);
+    });
     this.form.reset();
   }
 

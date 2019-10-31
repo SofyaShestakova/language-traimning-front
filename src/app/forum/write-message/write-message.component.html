@@ -8,13 +8,13 @@
         <td>{{message.date | date:'medium':null:'ru'}}</td>
         <td>
           <table>
-            <tr class="data" *ngFor="let answer of message.answers">
+            <!--tr class="data" *ngFor="let answer of message.answers">
               <td>{{answer.text}}</td>
               <td>{{answer.date | date: 'medium': null: 'ru' }}</td>
-            </tr>
+            </tr-->
           </table>
         </td>
-        <td>
+        <!--td>
           <button  class="buttons" type="button" (click)="showAnswerField(message.id)">Ответить</button>
 
           <div *ngIf="message.id == answer">
@@ -22,7 +22,7 @@
             <input id="answer" type="text" formControlName="answerText">
             <button class="buttons" type="button" (click)="submitAnswer(message.id)">Отправить ответ</button>
           </div>
-        </td>
+        </td-->
       </tr>
     </table>
   </div>
@@ -30,7 +30,7 @@
   <div>
     <label>Введите сообщение</label>
     <quill-editor formControlName="messageText"></quill-editor>
-    <button id="send" class="buttons" id="button" type="submit">Отправить</button>
+    <button id="send" class="buttons" type="submit">Отправить</button>
   </div>
   <div>
     <button id="topics" class="buttons" type="button" [routerLink]="['/forum']">Темы форума</button>

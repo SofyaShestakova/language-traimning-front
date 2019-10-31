@@ -1,8 +1,8 @@
 export interface Message {
   id?: number;
   text: string;
-  date: Date;
-  answers: Answer[];
+  date?: Date;
+  answers?: Answer[];
 }
 
 export interface Answer {

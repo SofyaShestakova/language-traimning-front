@@ -27,19 +27,29 @@ export class ForumComponent implements OnInit {
     });
     this.themeService.getTheme().subscribe((response) =>{
       response.themes.map(backTheme => {this.themes.push({
-        title: backTheme.themeName
+        title: backTheme.themeName,
+        id: backTheme.themeId,
+        messages: []
       })})
     });
   }
 
   addTheme() {
     const title = this.form.value.themeTitle;
-    this.themeService.createTheme(title).subscribe(()=>{
-      this.themes.push({title: title});
+    this.themeService.createTheme(title).subscribe((res)=>{
+      this.themes.push(
+        {
+          title: title,
+          id: res.themeId
+        });
     });
     this.form.reset();
     this.showForm = false;
     console.log(this.themes);
+  }
+
+  getById(id: number): Theme{
+    return this.themes.find( theme => theme.id === id);
   }
 
 }
