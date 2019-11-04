@@ -1,3 +1,4 @@
+<div class="description">На этой странице вы можете выбрать текст и написать по нему любой из предложенных видов работ</div>
 <form [formGroup]="form" (ngSubmit)="submitWork()">
   <button class="button" type="button" (click)="renderText()">Получить текст</button>
   <div *ngIf="isGetText">

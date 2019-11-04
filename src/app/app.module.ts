@@ -9,20 +9,13 @@ import { AppComponent } from './app.component';
 import { LandingComponent } from './landing/landing.component';
 import {SidebarComponent} from "./sidebar/sidebar.component";
 import { HeaderComponent } from './header/header.component';
-import { WritingWorkComponent } from './landing/writing-work/writing-work.component';
-import { WatchWorksComponent } from './landing/watch-works/watch-works.component';
-import { EventsComponent } from './landing/events/events.component';
-import { InformationComponent } from './landing/information/information.component';
 import { PersonalAreaComponent } from './personal-area/personal-area.component';
-import { PhotoComponent } from './personal-area/photo/photo.component';
 import { PersonalInfoComponent } from './personal-area/personal-info/personal-info.component';
 import { GraphicsComponent } from './personal-area/graphics/graphics.component';
 import { DoingWorkComponent } from './doing-work/doing-work.component';
-import { DescriptionComponent } from './doing-work/description/description.component';
 import { SendWorkComponent } from './doing-work/send-work/send-work.component';
 import {HttpService} from "./http.service";
 import { WatchingWorkComponent } from './watching-work/watching-work.component';
-import { DescriptionWorkComponent } from './watching-work/description-work/description-work.component';
 import { OtherWorksComponent } from './watching-work/other-works/other-works.component';
 import {GoogleChartsModule} from 'angular-google-charts';
 import { ForumComponent } from './forum/forum.component';
@@ -37,13 +30,12 @@ import {registerLocaleData} from '@angular/common';
 import ruLocale from '@angular/common/locales/ru';
 import { OtherPageComponent } from './other-page/other-page.component';
 import { InfoComponent } from './other-page/info/info.component';
-import { PhotoOtherComponent } from './other-page/photo-other/photo-other.component';
 import { AssignmentComponent } from './assignment/assignment.component';
 import { RegistrationComponent } from './registration/registration.component';
 import { MainComponent } from './main/main.component';
 import { AuthComponent } from './auth/auth.component';
 import { ModeratorPageComponent } from './moderator-page/moderator-page.component';
-import { AdminPageComponent } from './admin-page/admin-page.component';
+
 
 
 registerLocaleData(ruLocale, 'ru');
@@ -63,19 +55,12 @@ registerLocaleData(ruLocale, 'ru');
     LandingComponent,
     SidebarComponent,
     HeaderComponent,
-    WritingWorkComponent,
-    WatchWorksComponent,
-    EventsComponent,
-    InformationComponent,
     PersonalAreaComponent,
-    PhotoComponent,
     PersonalInfoComponent,
     GraphicsComponent,
     DoingWorkComponent,
-    DescriptionComponent,
     SendWorkComponent,
     WatchingWorkComponent,
-    DescriptionWorkComponent,
     OtherWorksComponent,
     ForumComponent,
     WriteMessageComponent,
@@ -86,13 +71,11 @@ registerLocaleData(ruLocale, 'ru');
     StatGraphicsComponent,
     OtherPageComponent,
     InfoComponent,
-    PhotoOtherComponent,
     AssignmentComponent,
     RegistrationComponent,
     MainComponent,
     AuthComponent,
     ModeratorPageComponent,
-    AdminPageComponent,
   ],
   providers:[HttpService],
   bootstrap: [AppComponent]

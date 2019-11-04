@@ -5,7 +5,6 @@ import {WorkContainer} from '../shared/services/workContainer';
   selector: 'app-watching-work',
   styleUrls: ['./watching-work.component.scss'],
   template:`<h3>Просмотр чужих работ</h3>
-  <app-description-work></app-description-work>
   <app-other-works></app-other-works>`
 
 })
