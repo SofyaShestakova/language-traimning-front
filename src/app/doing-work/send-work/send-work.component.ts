@@ -1,13 +1,13 @@
-import { Component, OnInit } from '@angular/core';
-import {HttpService} from "../../http.service";
+import {Component, OnInit} from '@angular/core';
 import {FormControl, FormGroup, Validators} from '@angular/forms';
 import {Text, Work} from '../../shared/interfaces';
 import {CurrentUserService} from '../../shared/services/currentUser.service';
-import {HttpClient, HttpHeaders} from '@angular/common/http';
-import {WorkService} from '../../shared/services/htpp/work.service';
-import {AuthService} from '../../shared/services/htpp/auth.service';
+import {HttpClient} from '@angular/common/http';
+
 import {Router} from '@angular/router';
 import {WorkContainer} from '../../shared/services/workContainer';
+import {WorkService} from "../../shared/services/htpp/work.service";
+import {AuthService} from "../../shared/services/htpp/auth.service";
 
 @Component({
   selector: 'app-send-work',
@@ -16,11 +16,12 @@ import {WorkContainer} from '../../shared/services/workContainer';
 })
 export class SendWorkComponent implements OnInit {
 
-  form :FormGroup;
+  form: FormGroup;
   text: Text;
 
   isSubmit = false;
-  isGetText= false;
+  isGetText = false;
+
   constructor(private user: CurrentUserService,
               private http: HttpClient,
               private workService: WorkService,
@@ -49,14 +50,26 @@ export class SendWorkComponent implements OnInit {
 
     console.log(work);
 
-    if(this.auth.isAuthenticated()){
-      this.workService.postWork(this.user.username, work).subscribe( (res) => {
+    if (this.auth.isAuthenticated()) {
+      this.workService.postWork(this.user.username, work).subscribe((res) => {
         let viewType;
         switch (res.type) {
-          case "ANALYSIS" : {viewType = "Анализ"} break;
-          case "TRANSLATION" : {viewType = "Перевод"} break;
-          case "RETELLING" : {viewType = "Краткий пересказ"} break;
-          case "COMMENT" : {viewType = "Комментарий"} break;
+          case "ANALYSIS" : {
+            viewType = "Анализ"
+          }
+            break;
+          case "TRANSLATION" : {
+            viewType = "Перевод"
+          }
+            break;
+          case "RETELLING" : {
+            viewType = "Краткий пересказ"
+          }
+            break;
+          case "COMMENT" : {
+            viewType = "Комментарий"
+          }
+            break;
         }
 
         this.workContainer.works.push({
@@ -68,22 +81,21 @@ export class SendWorkComponent implements OnInit {
 
         this.isSubmit = true;
       });
-    }else {
+    } else {
       this.router.navigate(['/auth']);
     }
 
 
-
   }
 
-  renderText(){
-    this.workService.getText().subscribe((response)=>{
+  renderText() {
+    this.workService.getText().subscribe((response) => {
       this.isGetText = true;
       this.text = {
-       textId: response.textId,
-       title: response.title,
-       text: response.text
-     };
+        textId: response.textId,
+        title: response.title,
+        text: response.text
+      };
     });
 
 

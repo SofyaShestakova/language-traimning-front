@@ -21,6 +21,8 @@ export interface Theme {
 export interface User {
     username: string;
     password: string;
+    bio?: string;
+    screenName?: string;
 }
 
 export interface SpringAuthResponse {
@@ -40,4 +42,13 @@ export interface Work {
   type: string;
   text: string;
   authorId?: string
+}
+export interface Assesment{
+  workId:number;
+  mark:number;
+  comment:string;
+  editDate:Date;
+  createDate:Date;
+  expertId:number;
+  assesmentId:number
 }

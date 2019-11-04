@@ -1,5 +1,5 @@
 $photo_width: 200px;
-#fio, info {
+.fio {
   font-size: 15px;
   font-weight: 500;
   height: 25px;
@@ -11,7 +11,7 @@ $photo_width: 200px;
   color: darkslategrey;
 }
 
-#info {
+.info {
   background-color: #d1cfe3;
   color: darkslategrey;
   margin-left:$photo_width+80;
@@ -19,4 +19,13 @@ $photo_width: 200px;
   width:950px;
   height:173px;
   text-align:center;
+}
+.bio{
+  width:300px;
+  height: 150px;
+  margin-top:-20px;
+  margin-left:200px;
+}
+.label{
+  margin-left:10px;
 }

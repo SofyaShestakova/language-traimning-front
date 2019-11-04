@@ -1,2 +1,16 @@
-<app-work-and-mark></app-work-and-mark>
-<app-comments></app-comments>
+<div id="topic">Тема работы</div>
+<div id="work">Работа</div>
+<div id="mark">
+  <form method="POST">
+    <h3>Как вы оцениваете эту работу?</h3>
+    <div><input type="radio" name="option" value="5" checked>5 (Отлично)</div>
+    <div><input type="radio" name="option" value="4">4 (Хорошо)</div>
+    <div><input type="radio" name="option" value="3">3 (Удовлетворительно)</div>
+    <div><input type="radio" name="option" value="2">2 (Плохо)</div>
+    <div><input type="radio" name="option" value="1">1 (Отвратительно)</div>
+    <div>
+      <textarea rows="4" cols="50" id="comment" placeholder="Комментировать..."></textarea>
+      <button id="send" (click)="submitAssesment()">Отправить</button>
+    </div>
+  </form>
+</div>

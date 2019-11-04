@@ -1,2 +1,11 @@
-<div id="fio">ФИО</div>
-<div id="info">О себе</div>
+<div class="fio">Введите ФИО:
+    <textarea [(ngModel)]="screenName"></textarea>
+  <div >{{user.screenName}}</div>
+</div>
+<div class="info">
+  <p>Введите информацию о себе</p>
+  <textarea class="bio" [(ngModel)]="bio"></textarea>
+  <button (click)="submitInfo()">Изменить данные</button>
+  <div>{{user.bio}}</div>
+</div>
+

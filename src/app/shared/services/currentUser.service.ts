@@ -5,6 +5,8 @@ import {AuthService} from './htpp/auth.service';
 export class CurrentUserService {
 
   username = '';
+  bio = '';
+  screenName = '';
 
   constructor(){
 

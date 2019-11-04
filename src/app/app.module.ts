@@ -39,8 +39,6 @@ import { OtherPageComponent } from './other-page/other-page.component';
 import { InfoComponent } from './other-page/info/info.component';
 import { PhotoOtherComponent } from './other-page/photo-other/photo-other.component';
 import { AssignmentComponent } from './assignment/assignment.component';
-import { WorkAndMarkComponent } from './assignment/work-and-mark/work-and-mark.component';
-import { CommentsComponent } from './assignment/comments/comments.component';
 import { RegistrationComponent } from './registration/registration.component';
 import { MainComponent } from './main/main.component';
 import { AuthComponent } from './auth/auth.component';
@@ -90,8 +88,6 @@ registerLocaleData(ruLocale, 'ru');
     InfoComponent,
     PhotoOtherComponent,
     AssignmentComponent,
-    WorkAndMarkComponent,
-    CommentsComponent,
     RegistrationComponent,
     MainComponent,
     AuthComponent,

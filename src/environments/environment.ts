@@ -7,8 +7,8 @@ import {Environment} from './interface';
 export const environment: Environment = {
   production: false,
   baseUrl: "http://localhost",
-  heliosPort: "12500",
-  localPort: "5500",
+  heliosPort: "12300",
+  localPort: "6932",
   textId: "1"
 };
 
