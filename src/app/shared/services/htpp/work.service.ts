@@ -23,7 +23,20 @@ export class WorkService {
 
     return this.http.post(`${environment.baseUrl}:${environment.localPort}/works`, work, options);
   }
-  getText():Observable<any>{
-    return  this.http.get(`${environment.baseUrl}:${environment.localPort}/texts/1`);
+
+  getWork(username: string, workId: number): Observable<any> {
+    const headers = new HttpHeaders({
+      "username": username,
+      "Authorization": "Bearer " + localStorage.getItem("spring-token"),
+      "Content-Type": "application/json"
+    });
+    const options = {headers: headers};
+
+
+    return this.http.get(`${environment.baseUrl}:${environment.localPort}/works/${workId}`,options);
+  }
+
+  getText(): Observable<any> {
+    return this.http.get(`${environment.baseUrl}:${environment.localPort}/texts/1`);
   }
 }

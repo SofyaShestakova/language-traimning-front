@@ -1,5 +1,5 @@
-<div id="topic">Тема работы</div>
-<div id="work">Работа</div>
+<div id="topic">Заголовок работы</div>
+<div id="work">{{text}}</div>
 <div id="mark">
   <form method="POST">
     <h3>Как вы оцениваете эту работу?</h3>
@@ -13,4 +13,5 @@
       <button id="send" (click)="submitAssesment()">Отправить</button>
     </div>
   </form>
+  <div class="success" *ngIf="isSuccess" > Ваша оценка будет учтена! </div>
 </div>

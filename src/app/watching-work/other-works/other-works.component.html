@@ -1,14 +1,16 @@
 <table id="table">
   <tr>
     <td *ngFor="let viewWorks of works.works">
-
-      <div class="work">
+      <div class="work" (click)="setWorkId(viewWorks.workId)">
+        <a routerLink="/assignment">
         <div class="title">
           <h4>{{viewWorks.title}}</h4>
 
           <h5>Тип текста:{{viewWorks.type}}</h5>
         </div>
-        <div class="text">{{viewWorks.text}}</div>
+        <div class="text">Работа:{{viewWorks.text}}</div>
+        <div>{{viewWorks.workId}}</div>
+        </a>
       </div>
     </td>
   </tr>

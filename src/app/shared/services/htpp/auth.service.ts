@@ -30,7 +30,7 @@ export class AuthService {
     });
 
     const options = {headers: headers};
-
+    localStorage.setItem('login',user.username);
     return this.http.get(`${environment.baseUrl}:${environment.localPort}/auth`, options)
       .pipe(
         tap(this.setToken),
@@ -46,7 +46,7 @@ export class AuthService {
     return !!this.token;
   }
 
-  private setToken(response: SpringAuthResponse | null){
+  private setToken(response: SpringAuthResponse  | null){
     if(response){
       localStorage.setItem('spring-token', response.token);
     }else {
