@@ -1,13 +1,13 @@
 
-<div><img src="/assets/resources/photo.png" height="200px" width="200px" alt="фото" id="photo"></div>
+<div><img src="{{avatarUrl}}" height="200px" width="200px" alt="фото" id="photo"></div>
 <div class="fio">Введите ФИО:
-    <textarea [(ngModel)]="screenName"></textarea>
-  <div >{{user.screenName}}</div>
+    <textarea [(ngModel)]="newScreenName"></textarea>
+  <div >{{screenName}}</div>
 </div>
 <div class="info">
   <p>Введите информацию о себе</p>
-  <textarea class="bio" [(ngModel)]="bio"></textarea>
+  <textarea class="bio" [(ngModel)]="newBio"></textarea>
   <button (click)="submitInfo()">Изменить данные</button>
-  <div>{{user.bio}}</div>
+  <div>{{bio}}</div>
 </div>
 

@@ -1,11 +1,7 @@
 import {Component, Injectable, OnInit} from '@angular/core';
 import {HttpClient} from "@angular/common/http";
-import {CurrentUserService} from "../shared/services/currentUser.service";
-import {Assesment, User, Work} from "../shared/interfaces";
 import {AssesmentService} from "../shared/services/assesmentService";
-import {WorkService} from "../shared/services/htpp/work.service";
-import {WorkContainer} from "../shared/services/workContainer";
-import {FormControl, FormGroup, Validators} from "@angular/forms";
+import {WorkService} from "../shared/services/http/work.service";
 
 @Component({
   selector: 'app-assignment',
@@ -24,7 +20,6 @@ export class AssignmentComponent implements OnInit {
 
   constructor(
     private http: HttpClient,
-    private user: CurrentUserService,
     private assesment: AssesmentService,
     private workService: WorkService,
   ) {
@@ -42,17 +37,16 @@ export class AssignmentComponent implements OnInit {
   }
 
   ngOnInit() {
-    let login = localStorage.getItem('login');
     console.log("СТРОКА ПЕРЕД ТЕМ КАК ЗАСУНУТЬ ВОРКАЙДИ");
     let workId = parseInt(localStorage.getItem('workId'));
-    console.log("ЗАШЛА В ИНИТИ МЕТОД ПИПЕЦ"+workId);
-    this.workService.getWork(login, workId).subscribe(
+    console.log("ЗАШЛА В ИНИТИ МЕТОД ПИПЕЦ" + workId);
+    this.workService.getWork(workId).subscribe(
       (res) => {
         console.log("УРААААА МЫ ЗАШЛИ В САБСКРАЙБ");
         this.text = res.body.text;
-        console.log("ЭТО НЕ ХУЙ СОБАКИ А ТЕКСТ"+this.text);
+        console.log("ЭТО НЕ ХУЙ СОБАКИ А ТЕКСТ" + this.text);
       });
-      console.log("НУ И ВОТ ЧР ВЫШЛО"+this.text);
+    console.log("НУ И ВОТ ЧР ВЫШЛО" + this.text);
 
   }
 

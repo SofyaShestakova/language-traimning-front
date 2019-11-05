@@ -2,22 +2,30 @@ import {Injectable} from '@angular/core';
 import {HttpClient, HttpHeaders} from '@angular/common/http';
 import {Observable} from 'rxjs';
 import {environment} from "../../../environments/environment";
-import {User} from "../interfaces";
+import {GetUserDetailsResponse} from "../../model/response/GetUserDetailsResponse";
+import {EditUserRequest} from "../../model/request/EditUserRequest";
+import {AuthService} from "./http/auth.service";
+import {EditUserResponse} from "../../model/response/EditUserResponse";
 
 @Injectable({providedIn: 'root'})
 export class UserService {
-  constructor(private http: HttpClient) {
+  constructor(private http: HttpClient, private authService: AuthService) {
   }
 
-  patchUserDetails(user: User): Observable<any> {
+  getUserDetails(username: string): Observable<GetUserDetailsResponse> {
+    return this.http
+    .get<GetUserDetailsResponse>(`${environment.baseUrl}:${environment.localPort}/users/${username}/details`);
+  }
+
+  editUser(request: EditUserRequest): Observable<EditUserResponse> {
     const headers = new HttpHeaders({
-      "Authorization": "Bearer " + localStorage.getItem("spring-token"),
+      "Username": this.authService.username,
+      "Authorization": "Bearer " + this.authService.token,
       "Content-Type": "application/json",
     });
     const options = {headers: headers};
 
-    let username = user.username;
-    let body = {screenName: user.screenName, bio: user.bio};
-    return this.http.patch(`${environment.baseUrl}:${environment.localPort}/users/` + username, body, options);
+    console.log(request);
+    return this.http.patch<EditUserResponse>(`${environment.baseUrl}:${environment.localPort}/users`, request, options);
   }
 }

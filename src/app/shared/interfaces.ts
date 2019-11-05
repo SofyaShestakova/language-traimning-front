@@ -7,7 +7,7 @@ export interface Message {
 
 export interface Answer {
   id?: number;
-  text:string;
+  text: string;
   date: Date;
 }
 
@@ -19,13 +19,26 @@ export interface Theme {
 }
 
 export interface User {
-    username: string;
-    password: string;
-    bio?: string;
-    screenName?: string;
+  userId: number,
+  username: string;
+  email: string;
+  avatarUrl: string;
+  role: string;
 }
 
-export interface SpringAuthResponse {
+export interface UserDetails {
+  level: number;
+  screenName: string;
+  rating: number;
+  bio: string;
+  createDate: number;
+  editDate: number;
+}
+
+export interface AuthenticationResponse {
+  status: string;
+  username: string;
+  userId: number;
   token: string;
 }
 
@@ -36,19 +49,20 @@ export interface Text {
 }
 
 export interface Work {
-  workId?: string;
-  textId?: string
+  workId?: number;
+  textId?: number
   title: string;
   type: string;
   text: string;
   authorId?: string
 }
-export interface Assesment{
-  workId:number;
-  mark:number;
-  comment:string;
-  editDate:Date;
-  createDate:Date;
-  expertId:number;
-  assesmentId:number
+
+export interface Assesment {
+  workId: number;
+  mark: number;
+  comment: string;
+  editDate: Date;
+  createDate: Date;
+  expertId: number;
+  assessmentId: number
 }

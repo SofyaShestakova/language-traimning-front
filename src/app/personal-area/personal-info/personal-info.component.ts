@@ -1,8 +1,8 @@
-import {Component, Injectable, OnInit} from '@angular/core';
-import {CurrentUserService} from "../../shared/services/currentUser.service";
-import {HttpClient} from "@angular/common/http";
+import {Component, OnInit} from '@angular/core';
 import {UserService} from "../../shared/services/userService";
-import {User} from "../../shared/interfaces";
+import {AuthService} from "../../shared/services/http/auth.service";
+import {Router} from "@angular/router";
+import {EditUserRequest} from "../../model/request/EditUserRequest";
 
 @Component({
   selector: 'app-personal-info',
@@ -10,34 +10,45 @@ import {User} from "../../shared/interfaces";
   styleUrls: ['./personal-info.component.scss']
 })
 export class PersonalInfoComponent implements OnInit {
-  private bio: string;
+  private avatarUrl: string;
   private screenName: string;
+  private bio: string;
+
+  private newScreenName: string;
+  private newBio: string;
 
   constructor(
-    private user: CurrentUserService,
-    private details: UserService,
-    private http: HttpClient
+    private router: Router,
+    private authService: AuthService,
+    private userService: UserService,
   ) {
   }
 
-  submitInfo() {
-    this.user.screenName = this.screenName;
-    this.user.bio = this.bio;
-
-    const newUser: User = {
-      username: this.user.username,
-      password: "",
-      bio: this.user.bio,
-      screenName: this.user.screenName
-    };
-
-    this.details.patchUserDetails(newUser).subscribe(res => {
-
-    });
+  ngOnInit() {
+    if (!this.authService.isAuthenticated()) {
+      this.router.navigate(['/auth']);
+    }
+    this.loadDetails();
   }
 
+  loadDetails() {
+    this.userService.getUserDetails(this.authService.username).subscribe(
+      res => {
+        const user = res.user;
+        const details = res.details;
 
-  ngOnInit() {
+        this.avatarUrl = user.avatarUrl;
+        this.screenName = details.screenName;
+        this.bio = details.bio;
+      }
+    )
+  }
+
+  submitInfo() {
+    const request = new EditUserRequest(this.newScreenName, this.newBio);
+    this.userService.editUser(request).subscribe( () => {
+      this.loadDetails();
+    });
   }
 
 }

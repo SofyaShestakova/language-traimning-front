@@ -1,9 +1,9 @@
 import {Component, OnInit} from '@angular/core';
 import {FormControl, FormGroup, Validators} from '@angular/forms';
-import {User} from '../shared/interfaces';
 import {Router} from '@angular/router';
 import {UserService} from "../shared/services/userService";
-import {AuthService} from "../shared/services/htpp/auth.service";
+import {AuthService} from "../shared/services/http/auth.service";
+import {AuthCredentials} from "../model/request/AuthCredentials";
 
 @Component({
   selector: 'app-registration',
@@ -25,20 +25,10 @@ export class RegistrationComponent implements OnInit {
   }
 
   submit() {
-    const user: User = {
-      username: this.form.value.login,
-      password: this.form.value.password
-    };
-
-    this.auth.register(user).subscribe((res) => {
+    const credentials = new AuthCredentials(this.form.value.login, this.form.value.password);
+    this.auth.register(credentials).subscribe((res) => {
       this.form.reset();
       this.router.navigate(["/auth"]);
-    });
-
-    this.userService.patchUserDetails(user).subscribe(res => {
-      let details = res.details;
-      user.bio = details.bio;
-      user.screenName = details.screenName;
     });
   }
 }

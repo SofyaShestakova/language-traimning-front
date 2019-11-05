@@ -1,7 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {WorkContainer} from '../../shared/services/workContainer';
 import {HttpClient} from "@angular/common/http";
-import {WorkService} from "../../shared/services/htpp/work.service";
+import {WorkService} from "../../shared/services/http/work.service";
 
 @Component({
   selector: 'app-other-works',

@@ -5,7 +5,7 @@
     <div class="name">Language_Training</div>
   </div>
   <div *ngIf="!auth.isAuthenticated()" class="user-info">Вы не авторизованы</div>
-  <div *ngIf="auth.isAuthenticated()" class="user-info">{{user.username}}</div>
+  <div *ngIf="auth.isAuthenticated()" class="user-info">{{screenName}}</div>
 
   <div class="btn" *ngIf="!auth.isAuthenticated()">
     <a routerLink="/auth"> <button  type="button">Войти</button> </a>

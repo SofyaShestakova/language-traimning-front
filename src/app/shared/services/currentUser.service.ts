@@ -1,14 +1,16 @@
-import {Injectable} from '@angular/core';
-import {AuthService} from './htpp/auth.service';
+import {Injectable, OnInit} from '@angular/core';
 
 @Injectable({providedIn: 'root'})
-export class CurrentUserService {
+export class CurrentUserService implements OnInit {
+
+  ngOnInit(): void {
+  }
 
   username = '';
   bio = '';
   screenName = '';
 
-  constructor(){
+  constructor() {
 
   }
 }

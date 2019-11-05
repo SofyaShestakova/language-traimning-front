@@ -20,7 +20,7 @@ export class ThemeService {
 
     const headers = new HttpHeaders({
       "username": this.user.username,
-      "Authorization": "Bearer " + localStorage.getItem("spring-token"),
+      "Authorization": "Bearer " + localStorage.getItem("auth-token"),
       "Content-Type": "application/json"
     });
     const options = {headers: headers};
@@ -44,7 +44,7 @@ export class ThemeService {
   createMessage(message: Message, themeId): Observable<any>{
     const headers = new HttpHeaders({
       "username": this.user.username,
-      "Authorization": "Bearer " + localStorage.getItem("spring-token"),
+      "Authorization": "Bearer " + localStorage.getItem("auth-token"),
       "Content-Type": "application/json"
     });
     const options = {headers: headers};
