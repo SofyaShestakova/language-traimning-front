@@ -1,1 +1,17 @@
-<p>watching-work works!</p>
+<div>
+  <h3>Просмотр чужих работ</h3>
+  <div class="description">На этой странице вы можете просмотреть уже написанные работы</div>
+  <table id="table">
+    <tr>
+      <td *ngFor="let work of works">
+        <div class="work" (click)="onWorkClick(work.workId)">
+            <div class="title">
+              <h4>{{work.title}}</h4>
+            </div>
+            <div class="text">Работа:{{work.text}}</div>
+        </div>
+      </td>
+    </tr>
+
+  </table>
+</div>

@@ -2,7 +2,7 @@ import {Component, OnInit} from '@angular/core';
 import {FormControl, FormGroup, Validators} from '@angular/forms';
 import {Message, Theme} from '../../shared/interfaces';
 import {ActivatedRoute, Params} from '@angular/router';
-import {ThemeService} from '../../shared/services/http/theme.service';
+import {ForumService} from '../../shared/services/http/forum.service';
 import {ForumComponent} from '../forum.component';
 
 @Component({
@@ -20,7 +20,7 @@ export class WriteMessageComponent implements OnInit {
 
   constructor(
     private route: ActivatedRoute,
-    private themeService: ThemeService,
+    private themeService: ForumService,
     private forum: ForumComponent
   ) {}
 

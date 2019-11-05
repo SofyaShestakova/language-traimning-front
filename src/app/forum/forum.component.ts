@@ -2,7 +2,7 @@ import {Component, OnInit} from '@angular/core';
 import {Theme} from '../shared/interfaces';
 import {ActivatedRoute} from '@angular/router';
 import {FormControl, FormGroup, Validators} from '@angular/forms';
-import {ThemeService} from "../shared/services/http/theme.service";
+import {ForumService} from "../shared/services/http/forum.service";
 
 @Component({
   selector: 'app-forum',
@@ -12,7 +12,7 @@ import {ThemeService} from "../shared/services/http/theme.service";
 export class ForumComponent implements OnInit {
 
   constructor(
-    private themeService: ThemeService,
+    private themeService: ForumService,
     public route: ActivatedRoute
   ) {
   }

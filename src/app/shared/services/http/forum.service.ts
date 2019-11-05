@@ -2,25 +2,28 @@ import {Injectable} from '@angular/core';
 import {Observable} from 'rxjs';
 import {HttpClient, HttpHeaders} from '@angular/common/http';
 import {environment} from '../../../../environments/environment';
-import {CurrentUserService} from '../currentUser.service';
 import {Message} from '../../interfaces';
+import {AuthService} from "./auth.service";
 
 @Injectable({providedIn: 'root'})
-export class ThemeService {
+export class ForumService {
 
-  constructor(private http: HttpClient, private user: CurrentUserService){
+  constructor(
+    private http: HttpClient,
+    private authService: AuthService
+  ) {
     this.getTheme();
   }
 
-  getTheme(): Observable<any>{
+  getTheme(): Observable<any> {
     return this.http.get(`${environment.baseUrl}:${environment.localPort}/forum/topics`);
   }
 
-  createTheme(themeName: string): Observable<any>{
+  createTheme(themeName: string): Observable<any> {
 
     const headers = new HttpHeaders({
-      "username": this.user.username,
-      "Authorization": "Bearer " + localStorage.getItem("auth-token"),
+      "username": this.authService.username,
+      "Authorization": "Bearer " + this.authService.token,
       "Content-Type": "application/json"
     });
     const options = {headers: headers};
@@ -32,7 +35,7 @@ export class ThemeService {
     return this.http.post(`${environment.baseUrl}:${environment.localPort}/forum/topics`, theme, options);
   }
 
-  getMessage(themeId):Observable<any> {
+  getMessage(themeId): Observable<any> {
     const headers = new HttpHeaders({
       "Content-Type": "application/json"
     });
@@ -41,15 +44,15 @@ export class ThemeService {
     return this.http.get(`${environment.baseUrl}:${environment.localPort}/forum/messages?themeId=${themeId}`, options);
   }
 
-  createMessage(message: Message, themeId): Observable<any>{
+  createMessage(message: Message, themeId): Observable<any> {
     const headers = new HttpHeaders({
-      "username": this.user.username,
-      "Authorization": "Bearer " + localStorage.getItem("auth-token"),
+      "username": this.authService.username,
+      "Authorization": "Bearer " + this.authService.token,
       "Content-Type": "application/json"
     });
     const options = {headers: headers};
 
 
-    return this.http.post(`${environment.baseUrl}:${environment.localPort}/forum/messages/${themeId}`, message ,options);
+    return this.http.post(`${environment.baseUrl}:${environment.localPort}/forum/messages/${themeId}`, message, options);
   }
 }

@@ -2,9 +2,8 @@ import {Component, OnInit} from '@angular/core';
 import {FormControl, FormGroup, Validators} from "@angular/forms";
 import {HttpClient} from "@angular/common/http";
 import {Router} from "@angular/router";
-import {BankTextFilter} from "../model/request/WorksFilter";
-import {WorkService} from "../shared/services/http/work.service";
-import {WorkContainer} from "../shared/services/workContainer";
+import {BankTextFilter} from "../model/request/BankTextFilter";
+import {TextService} from "../shared/services/http/text.service";
 import {AuthService} from "../shared/services/http/auth.service";
 import {BankText} from "../model/BankText";
 import {CreateWorkRequest} from "../model/request/CreateWorkRequest";
@@ -30,8 +29,7 @@ export class DoingWorkComponent implements OnInit {
 
   constructor(
     private http: HttpClient,
-    private workService: WorkService,
-    private workContainer: WorkContainer,
+    private workService: TextService,
     private auth: AuthService,
     private router: Router
   ) {
@@ -76,13 +74,6 @@ export class DoingWorkComponent implements OnInit {
           }
             break;
         }
-
-        this.workContainer.works.push({
-          workId: res.workId,
-          title: res.title,
-          type: viewType,
-          text: res.text
-        });
 
         this.isError = false;
         this.isSubmit = true;

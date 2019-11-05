@@ -1,7 +1,7 @@
 import {Component, Injectable, OnInit} from '@angular/core';
 import {HttpClient} from "@angular/common/http";
-import {AssesmentService} from "../shared/services/assesmentService";
-import {WorkService} from "../shared/services/http/work.service";
+import {AssessmentService} from "../shared/services/assessment.service";
+import {TextService} from "../shared/services/http/text.service";
 
 @Component({
   selector: 'app-assignment',
@@ -10,25 +10,26 @@ import {WorkService} from "../shared/services/http/work.service";
 })
 @Injectable({providedIn: 'root'})
 export class AssignmentComponent implements OnInit {
+
   private workId: number;
   private comment: string;
   private mark: number;
   private isSuccess: boolean = false;
   private status: number;
+
+  private title: string;
   private text: string;
 
 
   constructor(
     private http: HttpClient,
-    private assesment: AssesmentService,
-    private workService: WorkService,
+    private assessment: AssessmentService,
+    private workService: TextService,
   ) {
   }
 
-  submitAssesment() {
-
-    this.assesment.createAssesment(this.workId, this.mark, this.comment).subscribe(res => {
-
+  submitAssessment() {
+    this.assessment.createAssessment(this.workId, this.mark, this.comment).subscribe(res => {
       this.status = res.status;
       if (this.status == 200) {
         this.isSuccess = true;
@@ -37,17 +38,11 @@ export class AssignmentComponent implements OnInit {
   }
 
   ngOnInit() {
-    console.log("СТРОКА ПЕРЕД ТЕМ КАК ЗАСУНУТЬ ВОРКАЙДИ");
-    let workId = parseInt(localStorage.getItem('workId'));
-    console.log("ЗАШЛА В ИНИТИ МЕТОД ПИПЕЦ" + workId);
-    this.workService.getWork(workId).subscribe(
-      (res) => {
-        console.log("УРААААА МЫ ЗАШЛИ В САБСКРАЙБ");
-        this.text = res.body.text;
-        console.log("ЭТО НЕ ХУЙ СОБАКИ А ТЕКСТ" + this.text);
-      });
-    console.log("НУ И ВОТ ЧР ВЫШЛО" + this.text);
-
+    this.workId = parseInt(localStorage.getItem('workId'));
+    this.workService.getWork(this.workId).subscribe((res) => {
+      this.title = res.title;
+      this.text = res.text;
+    });
   }
 
 }

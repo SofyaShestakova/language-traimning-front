@@ -49,12 +49,14 @@ export interface Text {
 }
 
 export interface Work {
-  workId?: number;
-  textId?: number
+  workId: number;
   title: string;
-  type: string;
   text: string;
-  authorId?: string
+  textId: number;
+  authorId: number;
+  type: number;
+  editDate: number;
+  createDate: number;
 }
 
 export interface Assesment {

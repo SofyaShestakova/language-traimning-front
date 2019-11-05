@@ -3,7 +3,7 @@ import {FormControl, FormGroup, Validators} from '@angular/forms';
 import {HttpClient} from '@angular/common/http';
 import {Router} from '@angular/router';
 import {AuthService} from "../shared/services/http/auth.service";
-import {UserService} from "../shared/services/userService";
+import {UserService} from "../shared/services/http/userService";
 import {AuthCredentials} from "../model/request/AuthCredentials";
 
 @Component({
@@ -18,10 +18,7 @@ export class AuthComponent implements OnInit {
   constructor(
     private http: HttpClient,
     public auth: AuthService,
-    private router: Router,
-    // private currentUser: CurrentUserService,
-    private authService: AuthService,
-    private userService: UserService
+    private router: Router
   ) {
   }
 

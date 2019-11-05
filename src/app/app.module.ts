@@ -15,7 +15,6 @@ import {GraphicsComponent} from './personal-area/graphics/graphics.component';
 import {DoingWorkComponent} from './doing-work/doing-work.component';
 import {HttpService} from "./http.service";
 import {WatchingWorkComponent} from './watching-work/watching-work.component';
-import {OtherWorksComponent} from './watching-work/other-works/other-works.component';
 import {GoogleChartsModule} from 'angular-google-charts';
 import {ForumComponent} from './forum/forum.component';
 import {WriteMessageComponent} from './forum/write-message/write-message.component';
@@ -58,7 +57,6 @@ registerLocaleData(ruLocale, 'ru');
     GraphicsComponent,
     DoingWorkComponent,
     WatchingWorkComponent,
-    OtherWorksComponent,
     ForumComponent,
     WriteMessageComponent,
     OtherMessageComponent,
