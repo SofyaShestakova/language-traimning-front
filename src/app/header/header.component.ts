@@ -10,6 +10,9 @@ import {Router} from "@angular/router";
 })
 export class HeaderComponent {
 
+  cooldown = 10_000;
+
+  lastUpdated = -1;
   screenName = "";
 
   constructor(
@@ -21,7 +24,9 @@ export class HeaderComponent {
 
 
   ngAfterContentChecked() {
-    if (this.auth.isAuthenticated()) {
+    const newTime = new Date().getTime();
+    if (this.auth.isAuthenticated() && newTime - this.lastUpdated >= this.cooldown) {
+      this.lastUpdated = newTime;
       this.userService.getUserDetails(this.auth.username)
       .subscribe(res => this.screenName = res.details.screenName)
     }

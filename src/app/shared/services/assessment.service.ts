@@ -16,11 +16,12 @@ export class AssessmentService {
     const headers = new HttpHeaders({
       "Authorization": "Bearer " + localStorage.getItem("auth-token"),
       "Content-Type": "application/json",
-      "username": this.authService.username,
+      "Username": this.authService.username,
     });
     const options = {headers: headers};
     let body = {mark: mark, comment: comment, workId: workId};
 
+    console.log(body);
     return this.http.post(`${environment.baseUrl}:${environment.localPort}/assessments`, body, options);
   }
 }

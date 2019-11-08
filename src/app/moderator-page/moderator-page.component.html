@@ -1,2 +1,13 @@
-<h4>Справочная информация</h4>
-<p>Авторы: </p>
+<p class="text">На этой странице вы можете добавить текст</p>
+<button class = "button" type="button" (click)="submitNewText()"  >Добавить текст</button>
+<div *ngIf="isClick">
+<form method="post" >
+  <label>
+    <textarea  placeholder="Введите тему текста..." id="topic" class="text-input"></textarea>
+  </label>
+  <label>
+    <textarea placeholder="Введите текст..." class="text-input" id="text"></textarea>
+  </label>
+  <button type="button"  id="send-button" class="button">Отправить</button>
+</form>
+</div>

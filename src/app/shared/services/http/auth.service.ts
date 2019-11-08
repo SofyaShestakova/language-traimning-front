@@ -22,7 +22,15 @@ export class AuthService {
   }
 
   register(credentials: AuthCredentials): Observable<any> {
-    return this.http.post(`${environment.baseUrl}:${environment.localPort}/auth`, credentials).pipe(
+    const headers = new HttpHeaders({
+      "Username": credentials.username,
+      "Password": credentials.password,
+      "Content-Type": "application/json"
+    });
+
+    const options = {headers: headers};
+
+    return this.http.post(`${environment.baseUrl}:${environment.localPort}/auth`, credentials, options).pipe(
       catchError(this.handleError.bind(this))
     )
   }
@@ -30,7 +38,8 @@ export class AuthService {
   login(credentials: AuthCredentials): Observable<any> {
     const headers = new HttpHeaders({
       "Username": credentials.username,
-      "Password": credentials.password
+      "Password": credentials.password,
+      "Content-Type": "application/json"
     });
 
     const options = {headers: headers};

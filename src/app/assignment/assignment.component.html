@@ -1,21 +1,22 @@
 <h1>
-  <div id="topic">Заголовок работы</div>
-  <div>{{title}}</div>
+  <div id="topic">{{title}}</div>
 </h1>
 
 <div id="work">{{text}}</div>
 <div id="mark">
-  <form method="POST">
+  <form [formGroup]="form" (ngSubmit)="submitAssessment()" id="form">
     <h3>Как вы оцениваете эту работу?</h3>
-    <div><input type="radio" name="option" value="5" checked>5 (Отлично)</div>
-    <div><input type="radio" name="option" value="4">4 (Хорошо)</div>
-    <div><input type="radio" name="option" value="3">3 (Удовлетворительно)</div>
-    <div><input type="radio" name="option" value="2">2 (Плохо)</div>
-    <div><input type="radio" name="option" value="1">1 (Отвратительно)</div>
+    <div><input type="radio" value="5" formControlName="mark" checked>5 (Отлично)
+    </div>
+    <div><input type="radio" value="4" formControlName="mark">4 (Хорошо)</div>
+    <div><input type="radio" value="3" formControlName="mark">3 (Удовлетворительно)
+    </div>
+    <div><input type="radio" value="2" formControlName="mark">2 (Плохо)</div>
+    <div><input type="radio" value="1" formControlName="mark">1 (Отвратительно)</div>
     <div>
-      <textarea rows="4" cols="50" id="comment" placeholder="Комментировать..."></textarea>
+      <textarea rows="4" cols="50" id="comment" placeholder="Комментировать..." formControlName="comment"></textarea>
       <button id="send" (click)="submitAssessment()">Отправить</button>
     </div>
   </form>
-  <div class="success" *ngIf="isSuccess" > Ваша оценка будет учтена! </div>
+  <div class="success" *ngIf="isSuccess"> Ваша оценка будет учтена!</div>
 </div>
