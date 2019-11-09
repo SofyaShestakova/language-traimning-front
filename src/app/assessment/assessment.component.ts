@@ -6,11 +6,11 @@ import {FormControl, FormGroup, Validators} from "@angular/forms";
 
 @Component({
   selector: 'app-assignment',
-  templateUrl: './assignment.component.html',
-  styleUrls: ['./assignment.component.scss']
+  templateUrl: './assessment.component.html',
+  styleUrls: ['./assessment.component.scss']
 })
 @Injectable({providedIn: 'root'})
-export class AssignmentComponent implements OnInit {
+export class AssessmentComponent implements OnInit {
 
   private form: FormGroup;
 

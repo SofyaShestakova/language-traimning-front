@@ -28,7 +28,7 @@ import {registerLocaleData} from '@angular/common';
 import ruLocale from '@angular/common/locales/ru';
 import {OtherPageComponent} from './other-page/other-page.component';
 import {InfoComponent} from './other-page/info/info.component';
-import {AssignmentComponent} from './assignment/assignment.component';
+import {AssessmentComponent} from './assessment/assessment.component';
 import {RegistrationComponent} from './registration/registration.component';
 import {MainComponent} from './main/main.component';
 import {AuthComponent} from './auth/auth.component';
@@ -66,7 +66,7 @@ registerLocaleData(ruLocale, 'ru');
     StatGraphicsComponent,
     OtherPageComponent,
     InfoComponent,
-    AssignmentComponent,
+    AssessmentComponent,
     RegistrationComponent,
     MainComponent,
     AuthComponent,

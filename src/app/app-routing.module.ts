@@ -9,7 +9,7 @@ import {ForumComponent} from "./forum/forum.component";
 import {RatingComponent} from "./rating/rating.component";
 import {StatisticsComponent} from "./statistics/statistics.component";
 import {OtherPageComponent} from "./other-page/other-page.component";
-import {AssignmentComponent} from "./assignment/assignment.component";
+import {AssessmentComponent} from "./assessment/assessment.component";
 import {WriteMessageComponent} from './forum/write-message/write-message.component';
 import {RegistrationComponent} from "./registration/registration.component";
 import {AuthComponent} from "./auth/auth.component";
@@ -27,7 +27,7 @@ const routes: Routes = [
   { path: 'rating', component: RatingComponent},
   { path: 'statistics', component: StatisticsComponent},
   { path: 'other-page', component: OtherPageComponent},
-  { path: 'assignment', component: AssignmentComponent},
+  { path: 'assignment', component: AssessmentComponent},
   { path: 'forum', component: ForumComponent, children: [
       {path: 'theme/:id', component: WriteMessageComponent}
     ]},
