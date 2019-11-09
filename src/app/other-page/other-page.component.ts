@@ -2,14 +2,21 @@ import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-other-page',
-  templateUrl: './other-page.component.html',
-  styleUrls: ['./other-page.component.scss']
+  styleUrls: ['./other-page.component.scss'],
+  templateUrl: './other-page.component.html'
 })
 export class OtherPageComponent implements OnInit {
 
-  constructor() { }
+  condition: boolean = true;
 
-  ngOnInit() {
+  toggle() {
+    this.condition = !this.condition;
   }
 
+  constructor() {
+  }
+
+  ngOnInit() {
+
+  }
 }

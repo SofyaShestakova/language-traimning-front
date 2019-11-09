@@ -20,14 +20,12 @@ import {ForumComponent} from './forum/forum.component';
 import {WriteMessageComponent} from './forum/write-message/write-message.component';
 import {OtherMessageComponent} from './forum/other-message/other-message.component';
 import {RatingComponent} from './rating/rating.component';
-import {RatingWorksComponent} from './rating/rating-works/rating-works.component';
 import {StatisticsComponent} from './statistics/statistics.component';
 import {StatGraphicsComponent} from './statistics/stat-graphics/stat-graphics.component';
 import {QuillModule} from 'ngx-quill';
 import {registerLocaleData} from '@angular/common';
 import ruLocale from '@angular/common/locales/ru';
 import {OtherPageComponent} from './other-page/other-page.component';
-import {InfoComponent} from './other-page/info/info.component';
 import {AssessmentComponent} from './assessment/assessment.component';
 import {RegistrationComponent} from './registration/registration.component';
 import {MainComponent} from './main/main.component';
@@ -61,11 +59,9 @@ registerLocaleData(ruLocale, 'ru');
     WriteMessageComponent,
     OtherMessageComponent,
     RatingComponent,
-    RatingWorksComponent,
     StatisticsComponent,
     StatGraphicsComponent,
     OtherPageComponent,
-    InfoComponent,
     AssessmentComponent,
     RegistrationComponent,
     MainComponent,
