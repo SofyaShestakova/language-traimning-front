@@ -1,8 +1,8 @@
 <h1>
-  <div id="topic">{{title}}</div>
+  <div id="topic">{{workTitle}}</div>
 </h1>
 
-<div id="work">{{text}}</div>
+<div id="work">{{workText}}</div>
 <div id="mark">
   <form [formGroup]="form" (ngSubmit)="submitAssessment()" id="form">
     <h3>Как вы оцениваете эту работу?</h3>
@@ -15,8 +15,8 @@
     <div><input type="radio" value="1" formControlName="mark">1 (Отвратительно)</div>
     <div>
       <textarea rows="4" cols="50" id="comment" placeholder="Комментировать..." formControlName="comment"></textarea>
-      <button id="send" (click)="submitAssessment()">Отправить</button>
+      <button id="send" type="submit">Отправить</button>
     </div>
   </form>
-  <div class="success" *ngIf="isSuccess"> Ваша оценка будет учтена!</div>
+  <div [ngClass]="(sendSuccess)?'success':'error'" *ngIf="hasSent">{{sendMessage}}</div>
 </div>

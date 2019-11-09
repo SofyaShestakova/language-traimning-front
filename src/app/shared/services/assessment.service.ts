@@ -3,6 +3,8 @@ import {HttpClient, HttpHeaders} from '@angular/common/http';
 import {Observable} from 'rxjs';
 import {environment} from "../../../environments/environment";
 import {AuthService} from "./http/auth.service";
+import {CreateAssessmentRequest} from "../../model/request/CreateAssessmentRequest";
+import {CreateAssessmentResponse} from "../../model/response/CreateAssessmentResponse";
 
 @Injectable({providedIn: 'root'})
 export class AssessmentService {
@@ -12,16 +14,16 @@ export class AssessmentService {
   ) {
   }
 
-  createAssessment(workId: number, mark: number, comment: string): Observable<any> {
+  createAssessment(workId: number, mark: number, comment: string): Observable<CreateAssessmentResponse> {
     const headers = new HttpHeaders({
       "Authorization": "Bearer " + localStorage.getItem("auth-token"),
-      "Content-Type": "application/json",
       "Username": this.authService.username,
+      "Content-Type": "application/json",
     });
     const options = {headers: headers};
-    let body = {mark: mark, comment: comment, workId: workId};
+    let body = new CreateAssessmentRequest(workId, mark, comment);
 
     console.log(body);
-    return this.http.post(`${environment.baseUrl}:${environment.localPort}/assessments`, body, options);
+    return this.http.post<CreateAssessmentResponse>(`${environment.baseUrl}:${environment.localPort}/assessments`, body, options);
   }
 }
