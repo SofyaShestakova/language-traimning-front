@@ -2,11 +2,11 @@ import {Component, OnInit} from '@angular/core';
 import {FormControl, FormGroup, Validators} from "@angular/forms";
 import {HttpClient} from "@angular/common/http";
 import {Router} from "@angular/router";
-import {BankTextFilter} from "../model/request/BankTextFilter";
-import {TextService} from "../shared/services/http/text.service";
-import {AuthService} from "../shared/services/http/auth.service";
-import {BankText} from "../model/BankText";
-import {CreateWorkRequest} from "../model/request/CreateWorkRequest";
+import {BankTextFilter} from "../../model/request/BankTextFilter";
+import {TextService} from "../../shared/services/http/text.service";
+import {AuthService} from "../../shared/services/http/auth.service";
+import {BankText} from "../../model/BankText";
+import {CreateWorkRequest} from "../../model/request/CreateWorkRequest";
 
 @Component({
   selector: 'app-doing-work',

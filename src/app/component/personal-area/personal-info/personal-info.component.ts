@@ -1,8 +1,8 @@
 import {Component, OnInit} from '@angular/core';
-import {UserService} from "../../shared/services/http/userService";
-import {AuthService} from "../../shared/services/http/auth.service";
+import {UserService} from "../../../shared/services/http/userService";
+import {AuthService} from "../../../shared/services/http/auth.service";
 import {Router} from "@angular/router";
-import {EditUserRequest} from "../../model/request/EditUserRequest";
+import {EditUserRequest} from "../../../model/request/EditUserRequest";
 
 @Component({
   selector: 'app-personal-info',

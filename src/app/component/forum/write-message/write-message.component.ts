@@ -1,8 +1,8 @@
 import {Component, OnInit} from '@angular/core';
 import {FormControl, FormGroup, Validators} from '@angular/forms';
-import {Message, Theme} from '../../shared/interfaces';
+import {Message, Theme} from '../../../shared/interfaces';
 import {ActivatedRoute, Params} from '@angular/router';
-import {ForumService} from '../../shared/services/http/forum.service';
+import {ForumService} from '../../../shared/services/http/forum.service';
 import {ForumComponent} from '../forum.component';
 
 @Component({

@@ -2,9 +2,9 @@ import {Component, OnInit} from '@angular/core';
 import {FormControl, FormGroup, Validators} from '@angular/forms';
 import {HttpClient} from '@angular/common/http';
 import {Router} from '@angular/router';
-import {AuthService} from "../shared/services/http/auth.service";
-import {UserService} from "../shared/services/http/userService";
-import {AuthCredentials} from "../model/request/AuthCredentials";
+import {AuthService} from "../../shared/services/http/auth.service";
+import {UserService} from "../../shared/services/http/userService";
+import {AuthCredentials} from "../../model/request/AuthCredentials";
 
 @Component({
   selector: 'app-auth',

@@ -1,7 +1,7 @@
 import {Component, OnInit} from '@angular/core';
-import {TextService} from "../shared/services/http/text.service";
-import {WorkFilter} from "../model/request/WorkFilter";
-import {Work} from "../shared/interfaces";
+import {TextService} from "../../shared/services/http/text.service";
+import {WorkFilter} from "../../model/request/WorkFilter";
+import {Work} from "../../shared/interfaces";
 import {Router} from "@angular/router";
 
 @Component({

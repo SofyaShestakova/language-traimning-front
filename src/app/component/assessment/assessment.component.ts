@@ -1,7 +1,7 @@
 import {Component, Injectable, OnInit} from '@angular/core';
 import {HttpClient} from "@angular/common/http";
-import {AssessmentService} from "../shared/services/assessment.service";
-import {TextService} from "../shared/services/http/text.service";
+import {AssessmentService} from "../../shared/services/assessment.service";
+import {TextService} from "../../shared/services/http/text.service";
 import {FormControl, FormGroup, Validators} from "@angular/forms";
 
 @Component({
@@ -9,7 +9,6 @@ import {FormControl, FormGroup, Validators} from "@angular/forms";
   templateUrl: './assessment.component.html',
   styleUrls: ['./assessment.component.scss']
 })
-@Injectable({providedIn: 'root'})
 export class AssessmentComponent implements OnInit {
 
   private form: FormGroup;

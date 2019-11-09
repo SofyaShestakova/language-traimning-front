@@ -1,8 +1,8 @@
 import {Component, OnInit} from '@angular/core';
-import {Theme} from '../shared/interfaces';
+import {Theme} from '../../shared/interfaces';
 import {ActivatedRoute} from '@angular/router';
 import {FormControl, FormGroup, Validators} from '@angular/forms';
-import {ForumService} from "../shared/services/http/forum.service";
+import {ForumService} from "../../shared/services/http/forum.service";
 
 @Component({
   selector: 'app-forum',
