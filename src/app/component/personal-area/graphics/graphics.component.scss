@@ -1,6 +1,6 @@
 $photo_width: 200px;
-$number_works_width:48%;
-#number_works{
+$number_works_width: 48%;
+#number_works {
   font-size: 15px;
   font-weight: 500;
   height: 180px;
@@ -12,7 +12,9 @@ $number_works_width:48%;
   color: darkslategrey;
   padding-top: 100px;
 }
-#average{ font-size: 15px;
+
+#average {
+  font-size: 15px;
   font-weight: 500;
   height: 180px;
   width: $number_works_width;
@@ -24,7 +26,7 @@ $number_works_width:48%;
   padding-top: 100px;
 }
 
-google-chart{
+google-chart {
   width: 680px;
   height: 250px;
 }

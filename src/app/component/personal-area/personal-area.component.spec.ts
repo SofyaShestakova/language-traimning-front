@@ -1,6 +1,6 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import {async, ComponentFixture, TestBed} from '@angular/core/testing';
 
-import { PersonalAreaComponent } from './personal-area.component';
+import {PersonalAreaComponent} from './personal-area.component';
 
 describe('PersonalAreaComponent', () => {
   let component: PersonalAreaComponent;
@@ -8,9 +8,9 @@ describe('PersonalAreaComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ PersonalAreaComponent ]
+      declarations: [PersonalAreaComponent]
     })
-    .compileComponents();
+      .compileComponents();
   }));
 
   beforeEach(() => {

@@ -22,20 +22,21 @@ export class WriteMessageComponent implements OnInit {
     private route: ActivatedRoute,
     private themeService: ForumService,
     private forum: ForumComponent
-  ) {}
+  ) {
+  }
 
   ngOnInit() {
-    this.route.params.subscribe( (params: Params) => {
+    this.route.params.subscribe((params: Params) => {
       this.theme = this.forum.getById(+params.id);
-        this.themeService.getMessage(this.theme.id).subscribe((response) => {
-          this.theme.messages = [];
-          response.messages.map((message) => {
-            this.theme.messages.push({
-              text: message.text,
-              date: new Date(message.createDate)
-            })
+      this.themeService.getMessage(this.theme.id).subscribe((response) => {
+        this.theme.messages = [];
+        response.messages.map((message) => {
+          this.theme.messages.push({
+            text: message.text,
+            date: new Date(message.createDate)
           })
-        });
+        })
+      });
     });
 
     this.form = new FormGroup({
@@ -50,7 +51,7 @@ export class WriteMessageComponent implements OnInit {
       date: new Date(),
       answers: []
     };
-    this.themeService.createMessage(message, this.theme.id).subscribe(()=>{
+    this.themeService.createMessage(message, this.theme.id).subscribe(() => {
       this.theme.messages.push(message);
     });
     this.form.reset();

@@ -68,7 +68,8 @@ registerLocaleData(ruLocale, 'ru');
     AuthComponent,
     ModeratorPageComponent,
   ],
-  providers:[HttpService],
+  providers: [HttpService],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {
+}

@@ -1,6 +1,6 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import {async, ComponentFixture, TestBed} from '@angular/core/testing';
 
-import { WriteMessageComponent } from './write-message.component';
+import {WriteMessageComponent} from './write-message.component';
 
 describe('WriteMessageComponent', () => {
   let component: WriteMessageComponent;
@@ -8,9 +8,9 @@ describe('WriteMessageComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ WriteMessageComponent ]
+      declarations: [WriteMessageComponent]
     })
-    .compileComponents();
+      .compileComponents();
   }));
 
   beforeEach(() => {

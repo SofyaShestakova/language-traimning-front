@@ -1,4 +1,3 @@
-
 <div *ngIf="route.children.length === 0">
   <div>
     <h2 id="header">Темы форума</h2>
@@ -10,9 +9,9 @@
     <button id='button' (click)="showForm=true">Добавить тему</button>
     <div *ngIf="showForm">
       <form [formGroup]="form" (ngSubmit)="addTheme()">
-        <label  text-size="40px" for="title"></label>
-        Название темы:  <input  id="title" formControlName="themeTitle">
-        <button  id="submit" type="submit">Создать</button>
+        <label text-size="40px" for="title"></label>
+        Название темы: <input id="title" formControlName="themeTitle">
+        <button id="submit" type="submit">Создать</button>
       </form>
     </div>
   </div>

@@ -45,10 +45,10 @@ export class AuthService {
     const options = {headers: headers};
 
     return this.http.get(`${environment.baseUrl}:${environment.localPort}/auth`, options)
-    .pipe(
-      tap(this.setCredentials),
-      catchError(this.handleError.bind(this))
-    )
+      .pipe(
+        tap(this.setCredentials),
+        catchError(this.handleError.bind(this))
+      )
   }
 
   logout() {

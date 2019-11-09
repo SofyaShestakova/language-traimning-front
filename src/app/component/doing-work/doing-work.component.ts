@@ -111,22 +111,22 @@ export class DoingWorkComponent implements OnInit {
   private loadMoreTexts() {
     let filter = new BankTextFilter(this.textsIndex);
     this.workService.getTexts(filter)
-    .subscribe(
-      (response) => {
-        if (response != null && response.length > 0) {
-          this.textsLength += response.length;
-          this.texts = this.texts.concat(response.texts);
+      .subscribe(
+        (response) => {
+          if (response != null && response.length > 0) {
+            this.textsLength += response.length;
+            this.texts = this.texts.concat(response.texts);
 
-          this.hasLoadedAtLeastOnce = true;
-          this.isTextAvailable = true;
-          this.text = this.texts[this.textsIndex++];
-        } else {
-          this.isTextAvailable = false;
-        }
-      },
-      err => {
+            this.hasLoadedAtLeastOnce = true;
+            this.isTextAvailable = true;
+            this.text = this.texts[this.textsIndex++];
+          } else {
+            this.isTextAvailable = false;
+          }
+        },
+        err => {
 
-      });
+        });
   }
 
 }

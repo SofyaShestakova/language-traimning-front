@@ -10,7 +10,9 @@
     <p><label for="password">Пароль</label></p>
     <input type="password" placeholder="" id="password" required formControlName="password">
 
-    <div> <button class="buttons">Зарегистрироваться</button></div>
+    <div>
+      <button class="buttons">Зарегистрироваться</button>
+    </div>
 
     <div class="error" *ngIf="auth.errors$ | async as error">
       {{error}}

@@ -57,7 +57,7 @@ export interface Work {
   type: number;
   editDate: number;
   createDate: number;
-  rating:number;
+  rating: number;
 }
 
 export interface Assesment {

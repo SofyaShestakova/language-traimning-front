@@ -14,21 +14,24 @@ $photo_width: 200px;
 .info {
   background-color: #d1cfe3;
   color: darkslategrey;
-  margin-left:$photo_width+80;
-  margin-top:30px;
-  width:950px;
-  height:173px;
-  text-align:center;
+  margin-left: $photo_width+80;
+  margin-top: 30px;
+  width: 950px;
+  height: 173px;
+  text-align: center;
 }
-.bio{
-  width:300px;
+
+.bio {
+  width: 300px;
   height: 150px;
-  margin-top:-20px;
-  margin-left:200px;
+  margin-top: -20px;
+  margin-left: 200px;
 }
-.label{
-  margin-left:10px;
+
+.label {
+  margin-left: 10px;
 }
-#photo{
+
+#photo {
   margin-left: 20px;
 }

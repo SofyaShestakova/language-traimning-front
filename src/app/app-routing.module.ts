@@ -1,5 +1,5 @@
-import { NgModule } from '@angular/core';
-import { Routes, RouterModule } from '@angular/router';
+import {NgModule} from '@angular/core';
+import {Routes, RouterModule} from '@angular/router';
 import {LandingComponent} from "./component/landing/landing.component";
 import {PersonalAreaComponent} from "./component/personal-area/personal-area.component";
 import {AppComponent} from "./component/app.component";
@@ -16,24 +16,25 @@ import {AuthComponent} from "./component/auth/auth.component";
 import {ModeratorPageComponent} from "./component/moderator-page/moderator-page.component";
 
 
-
 const routes: Routes = [
-  { path: '', redirectTo: '/main', pathMatch: 'full' },
-  { path: 'main', component: LandingComponent},
-  { path: 'main', component: AppComponent},
-  { path: 'personal-area', component: PersonalAreaComponent},
-  { path: 'doing-work', component: DoingWorkComponent},
-  { path: 'watching-work', component: WatchingWorkComponent},
-  { path: 'rating', component: RatingComponent},
-  { path: 'statistics', component: StatisticsComponent},
-  { path: 'other-page', component: OtherPageComponent},
-  { path: 'assignment', component: AssessmentComponent},
-  { path: 'forum', component: ForumComponent, children: [
+  {path: '', redirectTo: '/main', pathMatch: 'full'},
+  {path: 'main', component: LandingComponent},
+  {path: 'main', component: AppComponent},
+  {path: 'personal-area', component: PersonalAreaComponent},
+  {path: 'doing-work', component: DoingWorkComponent},
+  {path: 'watching-work', component: WatchingWorkComponent},
+  {path: 'rating', component: RatingComponent},
+  {path: 'statistics', component: StatisticsComponent},
+  {path: 'other-page', component: OtherPageComponent},
+  {path: 'assignment', component: AssessmentComponent},
+  {
+    path: 'forum', component: ForumComponent, children: [
       {path: 'theme/:id', component: WriteMessageComponent}
-    ]},
-  {path: 'registration', component:RegistrationComponent},
-  {path: 'auth', component:AuthComponent},
-  {path:'moderator-page', component:ModeratorPageComponent},
+    ]
+  },
+  {path: 'registration', component: RegistrationComponent},
+  {path: 'auth', component: AuthComponent},
+  {path: 'moderator-page', component: ModeratorPageComponent},
 ];
 
 @NgModule({

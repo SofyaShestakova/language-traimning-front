@@ -28,7 +28,7 @@ export class HeaderComponent {
     if (this.auth.isAuthenticated() && newTime - this.lastUpdated >= this.cooldown) {
       this.lastUpdated = newTime;
       this.userService.getUserDetails(this.auth.username)
-      .subscribe(res => this.screenName = res.details.screenName)
+        .subscribe(res => this.screenName = res.details.screenName)
     }
   }
 

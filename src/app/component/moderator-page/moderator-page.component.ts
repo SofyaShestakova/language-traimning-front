@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 
 @Component({
   selector: 'app-moderator-page',
@@ -6,11 +6,14 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./moderator-page.component.scss']
 })
 export class ModeratorPageComponent implements OnInit {
-  isClick :boolean = false;
-  constructor() { }
- submitNewText(){
+  isClick: boolean = false;
+
+  constructor() {
+  }
+
+  submitNewText() {
     this.isClick = true;
- }
+  }
 
   ngOnInit() {
   }

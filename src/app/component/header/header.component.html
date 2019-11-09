@@ -8,11 +8,13 @@
   <div *ngIf="auth.isAuthenticated()" class="user-info">{{screenName}}</div>
 
   <div class="btn" *ngIf="!auth.isAuthenticated()">
-    <a routerLink="/auth"> <button  type="button">Войти</button> </a>
+    <a routerLink="/auth">
+      <button type="button">Войти</button>
+    </a>
   </div>
 
   <div class="btn" *ngIf="auth.isAuthenticated()">
-     <button  type="button" (click)="logout()">Выйти</button>
+    <button type="button" (click)="logout()">Выйти</button>
   </div>
 
   <!--<img src="assets/resources/lk.png" id="lk" width="40px" alt="лк"/>-->

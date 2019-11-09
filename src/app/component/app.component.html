@@ -1,6 +1,8 @@
 <div class="container">
-  <app-header *ngIf="router.routerState.snapshot.url!=='/auth' && router.routerState.snapshot.url!=='/registration'"></app-header>
-  <app-sidebar *ngIf="router.routerState.snapshot.url!=='/auth' && router.routerState.snapshot.url!=='/registration'"></app-sidebar>
+  <app-header
+    *ngIf="router.routerState.snapshot.url!=='/auth' && router.routerState.snapshot.url!=='/registration'"></app-header>
+  <app-sidebar
+    *ngIf="router.routerState.snapshot.url!=='/auth' && router.routerState.snapshot.url!=='/registration'"></app-sidebar>
   <div id="page-content">
     <div>
       <router-outlet></router-outlet>

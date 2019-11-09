@@ -46,7 +46,7 @@ export class PersonalInfoComponent implements OnInit {
 
   submitInfo() {
     const request = new EditUserRequest(this.newScreenName, this.newBio);
-    this.userService.editUser(request).subscribe( () => {
+    this.userService.editUser(request).subscribe(() => {
       this.loadDetails();
     });
   }

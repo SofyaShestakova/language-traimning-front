@@ -17,7 +17,7 @@ export class UserService {
 
   getUserDetails(username: string): Observable<GetUserDetailsResponse> {
     return this.http
-    .get<GetUserDetailsResponse>(`${environment.baseUrl}:${environment.localPort}/users/${username}/details`);
+      .get<GetUserDetailsResponse>(`${environment.baseUrl}:${environment.localPort}/users/${username}/details`);
   }
 
   editUser(request: EditUserRequest): Observable<EditUserResponse> {

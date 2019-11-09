@@ -25,18 +25,20 @@ export class ForumComponent implements OnInit {
     this.form = new FormGroup({
       themeTitle: new FormControl(null, Validators.required)
     });
-    this.themeService.getTheme().subscribe((response) =>{
-      response.themes.map(backTheme => {this.themes.push({
-        title: backTheme.themeName,
-        id: backTheme.themeId,
-        messages: []
-      })})
+    this.themeService.getTheme().subscribe((response) => {
+      response.themes.map(backTheme => {
+        this.themes.push({
+          title: backTheme.themeName,
+          id: backTheme.themeId,
+          messages: []
+        })
+      })
     });
   }
 
   addTheme() {
     const title = this.form.value.themeTitle;
-    this.themeService.createTheme(title).subscribe((res)=>{
+    this.themeService.createTheme(title).subscribe((res) => {
       this.themes.push(
         {
           title: title,
@@ -48,8 +50,8 @@ export class ForumComponent implements OnInit {
     console.log(this.themes);
   }
 
-  getById(id: number): Theme{
-    return this.themes.find( theme => theme.id === id);
+  getById(id: number): Theme {
+    return this.themes.find(theme => theme.id === id);
   }
 
 }

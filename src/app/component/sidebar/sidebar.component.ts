@@ -12,14 +12,14 @@ export class SidebarComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  constructor(private auth: AuthService, private router: Router){
+  constructor(private auth: AuthService, private router: Router) {
   }
 
 
   isAuth() {
-    if(this.auth.isAuthenticated()){
+    if (this.auth.isAuthenticated()) {
       this.router.navigate(["/personal-area"]);
-    }else {
+    } else {
       this.router.navigate(["/auth"]);
     }
   }

@@ -9,7 +9,7 @@ import {Router} from '@angular/router';
 export class AppComponent {
   title = 'language-training-front';
 
-  constructor(public router: Router){
+  constructor(public router: Router) {
   }
 
 }

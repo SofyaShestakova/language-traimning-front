@@ -1,6 +1,6 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import {async, ComponentFixture, TestBed} from '@angular/core/testing';
 
-import { ModeratorPageComponent } from './moderator-page.component';
+import {ModeratorPageComponent} from './moderator-page.component';
 
 describe('ModeratorPageComponent', () => {
   let component: ModeratorPageComponent;
@@ -8,9 +8,9 @@ describe('ModeratorPageComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ ModeratorPageComponent ]
+      declarations: [ModeratorPageComponent]
     })
-    .compileComponents();
+      .compileComponents();
   }));
 
   beforeEach(() => {
