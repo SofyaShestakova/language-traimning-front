@@ -2,35 +2,13 @@
   <h3>Рейтинг</h3>
   <h2 id='title'>Топ лучших работ</h2>
   <table id="table">
-    <tr>
-      <td><a routerLink="/other-page"> <img src="photo.png" height="40px" width="40px"></a></td>
-      <td class="work"><a routerLink="/watching-work/other-works">вид работы(ссылка на работу)</a>
+    <tr *ngFor="let pageWork of works">
+      <td>
+        <a routerLink="/other-page"> <img [src]="pageWork.user.avatarUrl" height="40px" width="40px"></a>
       </td>
-    </tr>
-    <tr>
-      <td><a routerLink="/other-page"><img src="photo.png" height="40px" width="40px"> </a></td>
+      <td class="work"><a routerLink="/watching-work/other-works">{{pageWork.work.title}}</a>
       <td class="work"><a routerLink="/watching-work/other-works">вид работы(ссылка на работу)</a>
-      </td>
-    </tr>
-    <tr>
-      <td><a routerLink="/other-page"><img src="photo.png" height="40px" width="40px"></a></td>
-      <td class="work"><a routerLink="/watching-work/other-works">вид работы(ссылка на работу)</a>
-      </td>
-    </tr>
-    <tr>
-      <td><a routerLink="/other-page"> <img src="photo.png" height="40px" width="40px"></a></td>
-      <td class="work"><a routerLink="/watching-work/other-works">вид работы(ссылка на работу)</a>
-      </td>
-    </tr>
-    <tr>
-      <td><a routerLink="/other-page"><img src="photo.png" height="40px" width="40px"> </a></td>
-      <td class="work"><a routerLink="/watching-work/other-works">вид работы(ссылка на работу)</a>
-      </td>
-    </tr>
-    <tr>
-      <td><a routerLink="/other-page"><img src="photo.png" height="40px" width="40px"></a></td>
-      <td class="work"><a routerLink="/watching-work/other-works">вид работы(ссылка на работу)</a>
-      </td>
+      <td class="work"><a routerLink="/watching-work/other-works">Рейтинг: {{pageWork.work.rating}}</a>
     </tr>
   </table>
   <a routerLink="/statistics">

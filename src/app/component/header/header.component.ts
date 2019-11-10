@@ -1,6 +1,6 @@
 import {Component} from '@angular/core';
 import {AuthService} from '../../shared/services/http/auth.service';
-import {UserService} from "../../shared/services/http/userService";
+import {UserServiceService} from "../../shared/services/http/userService.service";
 import {Router} from "@angular/router";
 
 @Component({
@@ -18,7 +18,7 @@ export class HeaderComponent {
   constructor(
     private auth: AuthService,
     private router: Router,
-    public userService: UserService
+    public userService: UserServiceService
   ) {
   }
 

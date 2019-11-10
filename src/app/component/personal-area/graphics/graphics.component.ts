@@ -1,4 +1,5 @@
 import {Component, OnInit} from '@angular/core';
+import {StatisticsService} from "../../../shared/services/http/statistics.service";
 
 class Chart {
   title;

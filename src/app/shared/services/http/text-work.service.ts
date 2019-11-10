@@ -11,7 +11,7 @@ import {WorkFilter} from "../../../model/request/WorkFilter";
 import {GetWorksResponse} from "../../../model/response/GetWorksResponse";
 
 @Injectable({providedIn: 'root'})
-export class TextService {
+export class TextWorkService {
 
   constructor(
     private http: HttpClient,

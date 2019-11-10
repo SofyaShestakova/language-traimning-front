@@ -1,7 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {FormControl, FormGroup, Validators} from '@angular/forms';
 import {Router} from '@angular/router';
-import {UserService} from "../../shared/services/http/userService";
+import {UserServiceService} from "../../shared/services/http/userService.service";
 import {AuthService} from "../../shared/services/http/auth.service";
 import {AuthCredentials} from "../../model/request/AuthCredentials";
 
@@ -14,7 +14,7 @@ export class RegistrationComponent implements OnInit {
 
   form: FormGroup;
 
-  constructor(public auth: AuthService, private userService: UserService, private router: Router) {
+  constructor(public auth: AuthService, private userService: UserServiceService, private router: Router) {
   }
 
   ngOnInit() {

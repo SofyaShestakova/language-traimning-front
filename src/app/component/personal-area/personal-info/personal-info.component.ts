@@ -1,5 +1,5 @@
 import {Component, OnInit} from '@angular/core';
-import {UserService} from "../../../shared/services/http/userService";
+import {UserServiceService} from "../../../shared/services/http/userService.service";
 import {AuthService} from "../../../shared/services/http/auth.service";
 import {Router} from "@angular/router";
 import {EditUserRequest} from "../../../model/request/EditUserRequest";
@@ -20,7 +20,7 @@ export class PersonalInfoComponent implements OnInit {
   constructor(
     private router: Router,
     private authService: AuthService,
-    private userService: UserService,
+    private userService: UserServiceService,
   ) {
   }
 

@@ -1,7 +1,7 @@
 import {Component, Injectable, OnInit} from '@angular/core';
 import {HttpClient, HttpErrorResponse} from "@angular/common/http";
-import {AssessmentService} from "../../shared/services/assessment.service";
-import {TextService} from "../../shared/services/http/text.service";
+import {AssessmentService} from "../../shared/services/http/assessment.service";
+import {TextWorkService} from "../../shared/services/http/text-work.service";
 import {FormControl, FormGroup, Validators} from "@angular/forms";
 import {CreateAssessmentRequest} from "../../model/request/CreateAssessmentRequest";
 import {CreateAssessmentResponse} from "../../model/response/CreateAssessmentResponse";
@@ -30,7 +30,7 @@ export class AssessmentComponent implements OnInit {
   constructor(
     private http: HttpClient,
     private assessment: AssessmentService,
-    private workService: TextService,
+    private workService: TextWorkService,
   ) {
   }
 

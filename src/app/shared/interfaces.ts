@@ -42,12 +42,6 @@ export interface AuthenticationResponse {
   token: string;
 }
 
-export interface Text {
-  textId: string;
-  title: string;
-  text: string;
-}
-
 export interface Work {
   workId: number;
   title: string;
@@ -60,12 +54,8 @@ export interface Work {
   rating: number;
 }
 
-export interface Assesment {
-  workId: number;
-  mark: number;
-  comment: string;
-  editDate: Date;
-  createDate: Date;
-  expertId: number;
-  assessmentId: number
+export interface PageWork {
+  work: Work;
+  user: User;
+  details: UserDetails;
 }

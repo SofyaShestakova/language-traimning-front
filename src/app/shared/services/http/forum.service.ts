@@ -22,7 +22,7 @@ export class ForumService {
   createTheme(themeName: string): Observable<any> {
 
     const headers = new HttpHeaders({
-      "username": this.authService.username,
+      "Username": this.authService.username,
       "Authorization": "Bearer " + this.authService.token,
       "Content-Type": "application/json"
     });

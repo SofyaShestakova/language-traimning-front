@@ -3,7 +3,7 @@ import {FormControl, FormGroup, Validators} from "@angular/forms";
 import {HttpClient} from "@angular/common/http";
 import {Router} from "@angular/router";
 import {BankTextFilter} from "../../model/request/BankTextFilter";
-import {TextService} from "../../shared/services/http/text.service";
+import {TextWorkService} from "../../shared/services/http/text-work.service";
 import {AuthService} from "../../shared/services/http/auth.service";
 import {BankText} from "../../model/BankText";
 import {CreateWorkRequest} from "../../model/request/CreateWorkRequest";
@@ -29,7 +29,7 @@ export class DoingWorkComponent implements OnInit {
 
   constructor(
     private http: HttpClient,
-    private workService: TextService,
+    private workService: TextWorkService,
     private auth: AuthService,
     private router: Router
   ) {

@@ -3,7 +3,7 @@ import {FormControl, FormGroup, Validators} from '@angular/forms';
 import {HttpClient} from '@angular/common/http';
 import {Router} from '@angular/router';
 import {AuthService} from "../../shared/services/http/auth.service";
-import {UserService} from "../../shared/services/http/userService";
+import {UserServiceService} from "../../shared/services/http/userService.service";
 import {AuthCredentials} from "../../model/request/AuthCredentials";
 
 @Component({

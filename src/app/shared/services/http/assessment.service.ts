@@ -1,10 +1,10 @@
 import {Injectable} from '@angular/core';
 import {HttpClient, HttpHeaders} from '@angular/common/http';
 import {Observable} from 'rxjs';
-import {environment} from "../../../environments/environment";
-import {AuthService} from "./http/auth.service";
-import {CreateAssessmentRequest} from "../../model/request/CreateAssessmentRequest";
-import {CreateAssessmentResponse} from "../../model/response/CreateAssessmentResponse";
+import {environment} from "../../../../environments/environment";
+import {AuthService} from "./auth.service";
+import {CreateAssessmentRequest} from "../../../model/request/CreateAssessmentRequest";
+import {CreateAssessmentResponse} from "../../../model/response/CreateAssessmentResponse";
 
 @Injectable({providedIn: 'root'})
 export class AssessmentService {
