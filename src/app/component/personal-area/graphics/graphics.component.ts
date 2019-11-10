@@ -1,19 +1,18 @@
 import {Component, OnInit} from '@angular/core';
-import {StatisticsService} from "../../../shared/services/http/statistics.service";
+import {StatisticsService} from "../../../shared/services/http/statistics.service"
+import {UserServiceService} from "../../../shared/services/http/userService.service";
+import {AuthService} from "../../../shared/services/http/auth.service";
+import * as _ from "lodash";
 
 class Chart {
-  title;
-  type;
-  data;
-  columnNames;
-  options;
 
-  constructor(title, type, data, columnNames, options) {
-    this.title = title;
-    this.type = type;
-    this.data = data;
-    this.columnNames = columnNames;
-    this.options = options;
+  constructor(
+    public title,
+    public type,
+    public data,
+    public columnNames,
+    public options
+  ) {
   }
 }
 
@@ -40,6 +39,7 @@ export class GraphicsComponent implements OnInit {
       ["Декабрь", 9],
     ], ['месяц', 'количество'], {});
 
+
   average: Chart = new Chart('Средний балл',
     'LineChart', [
       ["Январь", 25],
@@ -57,10 +57,54 @@ export class GraphicsComponent implements OnInit {
     ], ['месяц', 'балл'], {});
 
 
-  constructor() {
+  constructor(
+    private statisticsService: StatisticsService,
+    private authService: AuthService
+  ) {
   }
 
   ngOnInit() {
+    this.loadUserWorksAmountStatistics();
+    this.loadAverageUsersMarkStatistics();
   }
 
+  loadAverageUsersMarkStatistics() {
+    let encountDays = 7;
+
+    let nowDate = new Date();
+    let snapshotsAmount = 24 * encountDays + nowDate.getHours();
+    let snapshotPeriod = 1000 * 60 * 60;
+    let dateFrom = nowDate.getTime() - 1000 * 60 * 60 * 24 * encountDays;
+    // let dateFrom = 1572987600000;
+    this.statisticsService.getAverageUserRatingStatistics(this.authService.username, dateFrom, snapshotPeriod, snapshotsAmount)
+      .subscribe(result => {
+        this.average.data = _.map(result.statistics, statistic => [
+          ((snapshotDate) => {
+            let date = new Date(snapshotDate);
+            return `${date.getDate() + 1}/${date.getMonth() + 1} ${date.getHours()}:00`
+          })(statistic.snapshotDate),
+          statistic.rating
+        ])
+      })
+  }
+
+  loadUserWorksAmountStatistics() {
+    let encountDays = 7;
+
+    let nowDate = new Date();
+    let snapshotsAmount = 24 * encountDays + nowDate.getHours();
+    let snapshotPeriod = 1000 * 60 * 60;
+    let dateFrom = nowDate.getTime() - 1000 * 60 * 60 * 24 * encountDays;
+    // let dateFrom = 1572987600000;
+    this.statisticsService.getUsersWorksAmountStatistics(this.authService.username, dateFrom, snapshotPeriod, snapshotsAmount)
+      .subscribe(result => {
+        this.number_works.data = _.map(result.statistics, statistic => [
+          ((snapshotDate) => {
+            let date = new Date(snapshotDate);
+            return `${date.getDate() + 1}/${date.getMonth() + 1} ${date.getHours()}:00`
+          })(statistic.snapshotDate),
+          statistic.amountOfWorks
+        ])
+      })
+  }
 }

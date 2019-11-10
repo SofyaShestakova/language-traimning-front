@@ -48,10 +48,17 @@ export interface Work {
   text: string;
   textId: number;
   authorId: number;
-  type: number;
+  type: WorkType;
   editDate: number;
   createDate: number;
   rating: number;
+}
+
+export enum WorkType {
+  ANALYSIS = 0,
+  TRANSLATION = 1,
+  COMMENT = 2,
+  RETELLING = 3
 }
 
 export interface PageWork {
