@@ -2,10 +2,6 @@ $photo_width: 200px;
 .fio {
   font-size: 15px;
   font-weight: 500;
-  height: 25px;
-  width: 950px;
-  margin-top: -225px;
-  margin-left: $photo_width+80;
   text-align: center;
   background-color: #d1cfe3;
   color: darkslategrey;
@@ -14,24 +10,29 @@ $photo_width: 200px;
 .info {
   background-color: #d1cfe3;
   color: darkslategrey;
-  margin-left: $photo_width+80;
   margin-top: 30px;
-  width: 950px;
-  height: 173px;
   text-align: center;
 }
 
-.bio {
-  width: 300px;
-  height: 150px;
-  margin-top: -20px;
-  margin-left: 200px;
+.input{
+  width:200px;
+  margin-top:3%;
 }
-
-.label {
-  margin-left: 10px;
+ .right-column{
+   margin-left:10%;
+    margin-top:5%;
+ }
+.left-column{
+  margin-left:20%;
+  margin-top:10%;
 }
-
-#photo {
-  margin-left: 20px;
+.info-label{
+  text-align:center;
+}
+#bio{
+  width:500px;
+  height:100px;
+}
+.button{
+  margin-top:2%;
 }

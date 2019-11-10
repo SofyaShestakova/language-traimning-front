@@ -1,4 +1,6 @@
-$work-width : 20%;
+$work-width : 30%;
+$sidebar_width: 6%;
+$header_height: 9%;
 .work {
   font-size: 15px;
   font-weight: 500;
@@ -13,9 +15,9 @@ $work-width : 20%;
 }
 
 #table {
-  width: 4*$work-width;
+  width: 99.9%;
   margin-top: 35px;
-  table-layout:fixed;
+  border-spacing: 2px 3px;
 }
 
 .description {
@@ -24,6 +26,7 @@ $work-width : 20%;
   height: 70px;
   margin-left: 40px;
   margin-right: 40px;
+  margin-top:3%;
   text-align: center;
   background-color: #d1cfe3;
   color: darkslategrey;
@@ -44,5 +47,13 @@ $work-width : 20%;
   font-size: 20px;
   color: purple;
   background-color: #d1cfe3;
+}
+.container{
+  width:99.9%;
+  height:99.9%-$header_height;
+  background-color:#e2d6e8;
+  background-attachment:fixed;
+  background-repeat:no-repeat;
+  background-size: cover;
 }
 

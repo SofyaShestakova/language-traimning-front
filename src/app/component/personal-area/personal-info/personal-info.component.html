@@ -1,12 +1,22 @@
-<div><img src="{{avatarUrl}}" height="200px" width="200px" alt="фото" id="photo"></div>
-<div class="fio">Введите ФИО:
-  <textarea [(ngModel)]="newScreenName"></textarea>
-  <div>{{screenName}}</div>
-</div>
-<div class="info">
-  <p>Введите информацию о себе</p>
-  <textarea class="bio" [(ngModel)]="newBio"></textarea>
-  <button (click)="submitInfo()">Изменить данные</button>
-  <div>{{bio}}</div>
-</div>
-
+<table>
+  <tr>
+    <td>
+      <div class="left-column">
+      <img src="{{avatarUrl}}" height="200px" width="200px" alt="фото" id="photo">
+    </div>
+    </td>
+    <td>
+      <div class="right-column">
+      <div class="fio">Введите ФИО:
+      <textarea class="input" [(ngModel)]="newScreenName"></textarea>
+      <div>{{screenName}}</div>
+      <div class="info">Введите информацию о себе:
+        <textarea class="input"  id="bio"[(ngModel)]="newBio"></textarea>
+        <div>{{bio}}</div>
+        <button class="button" (click)="submitInfo()">Изменить данные</button>
+      </div>
+      </div>
+      </div>
+    </td>
+  </tr>
+</table>

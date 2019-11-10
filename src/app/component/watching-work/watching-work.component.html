@@ -1,8 +1,8 @@
-<div>
+<div class="container">
   <h3>Просмотр чужих работ</h3>
   <div class="description">На этой странице вы можете просмотреть уже написанные работы</div>
-  <table id="table">
-    <tr *ngFor="let pageWork of works">
+  <table id="table" *ngFor="let pageWork of works">
+    <tr>
       <td>
         <div class="work" (click)="onWorkClick(pageWork.work.workId)">
           <div class="title">

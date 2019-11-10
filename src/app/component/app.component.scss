@@ -7,9 +7,7 @@ $sidebar_width: 6%;
 }
 
 #page-content:not(.auth) {
-  //background-color: yellow;
-  // height: 99.9% - $header_height;
-  width: 99.9% - $sidebar_width;
+ width: 99.9% - $sidebar_width ;
   float: right;
   background-color: #e2d6e8;
   height: 100%;
