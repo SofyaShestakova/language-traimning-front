@@ -19,7 +19,7 @@ export class WatchingWorkComponent implements OnInit {
   constructor(
     private router: Router,
     private workService: TextWorkService,
-    private userService: UserServiceService
+    private userService: UserServiceService,
   ) {
   }
 
@@ -27,10 +27,10 @@ export class WatchingWorkComponent implements OnInit {
     this.workService.getWorks(new WorkFilter()).subscribe(res => {
         this.worksAmount = res.length;
         this.works = [];
-        res.works.forEach(work => {
+        res.works.forEach(work  => {
           this.userService.getUserDetailsById(work.authorId).subscribe(user => {
             let pageWork: PageWork = {work: work, user: user.user, details: user.details};
-            this.works.push(pageWork)
+            this.works.push(pageWork);
           });
         })
       }

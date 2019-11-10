@@ -1,8 +1,9 @@
+$work-width : 20%;
 .work {
   font-size: 15px;
   font-weight: 500;
   height: fit-content;
-  width: 350px;
+  width: $work-width;
   text-align: center;
   background-color: #d1cfe3;
   color: darkslategrey;
@@ -12,8 +13,9 @@
 }
 
 #table {
-  width: 100%;
+  width: 4*$work-width;
   margin-top: 35px;
+  table-layout:fixed;
 }
 
 .description {
@@ -43,3 +45,4 @@
   color: purple;
   background-color: #d1cfe3;
 }
+
